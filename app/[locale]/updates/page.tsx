@@ -7,6 +7,9 @@ import { Card, CardContent } from "@/components/ui/Card";
 import { formatDate } from "@/lib/utils";
 import { getCloudinaryUrl } from "@/lib/cloudinary";
 
+// Force dynamic rendering to avoid database access during build
+export const dynamic = 'force-dynamic';
+
 export default async function UpdatesPage({
   params
 }: {
@@ -16,15 +19,18 @@ export default async function UpdatesPage({
   setRequestLocale(locale);
   const t = await getTranslations();
 
-  const posts = await prisma.post.findMany({
-    where: { status: "PUBLISHED" },
-    include: {
-      i18n: {
-        where: { locale }
-      }
-    },
-    orderBy: { publishedAt: "desc" }
-  });
+  // Guard against missing DATABASE_URL
+  const posts = process.env.DATABASE_URL
+    ? await prisma.post.findMany({
+        where: { status: "PUBLISHED" },
+        include: {
+          i18n: {
+            where: { locale }
+          }
+        },
+        orderBy: { publishedAt: "desc" }
+      }).catch(() => [])
+    : [];
 
   return (
     <div className="py-16 md:py-24">

@@ -11,6 +11,20 @@ import { getCloudinaryUrl } from "@/lib/cloudinary";
 export async function UpdatesPreview({ locale }: { locale: string }) {
   const t = await getTranslations();
 
+  // Guard against missing DATABASE_URL during build
+  if (!process.env.DATABASE_URL) {
+    return (
+      <section className="py-16 md:py-24 bg-beige">
+        <Container>
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+            {t("updates.title")}
+          </h2>
+          <p className="text-center text-gray-600">{t("ui.noPosts")}</p>
+        </Container>
+      </section>
+    );
+  }
+
   try {
     const posts = await prisma.post.findMany({
       where: { status: "PUBLISHED" },

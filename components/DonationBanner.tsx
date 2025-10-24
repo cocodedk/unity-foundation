@@ -2,6 +2,11 @@ import { prisma } from "@/lib/prisma";
 import { DonationBannerInner } from "./DonationBannerInner";
 
 export async function DonationBanner({ locale }: { locale: string }) {
+  // Guard against missing DATABASE_URL during build
+  if (!process.env.DATABASE_URL) {
+    return null;
+  }
+
   try {
     const announcement = await prisma.announcement.findUnique({
       where: { id: 1 },
