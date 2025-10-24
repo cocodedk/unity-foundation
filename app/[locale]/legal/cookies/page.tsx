@@ -8,20 +8,20 @@ export default async function CookiesPage({ params }: { params: Promise<{ locale
   const t = await getTranslations();
 
   return (
-    <div className="py-16 md:py-24">
+    <section className="py-16 md:py-24 bg-background-light">
       <Container>
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-8 text-center">
           {t("legal.cookies")}
         </h1>
 
         <div className="max-w-3xl mx-auto">
           <Card>
             <CardContent className="p-8">
-              <p className="text-gray-600">{t("legal.comingSoon")}</p>
+              <p className="text-text-primary">{t("legal.comingSoon")}</p>
             </CardContent>
           </Card>
         </div>
       </Container>
-    </div>
+    </section>
   );
 }

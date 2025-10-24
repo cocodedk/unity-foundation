@@ -33,14 +33,14 @@ export default async function UpdatesPage({
     : [];
 
   return (
-    <div className="py-16 md:py-24">
+    <section className="py-16 md:py-24 bg-background-light">
       <Container>
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-12 text-center">
           {t("updates.title")}
         </h1>
 
         {posts.length === 0 ? (
-          <p className="text-center text-gray-600">{t("ui.noPosts")}</p>
+          <p className="text-center text-text-primary">{t("ui.noPosts")}</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {posts.map((post) => {
@@ -51,7 +51,7 @@ export default async function UpdatesPage({
                 <Link key={post.id} href={`/updates/${post.slug}` as any}>
                   <Card className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                     {post.coverId && (
-                      <div className="relative h-48 w-full bg-gray-100">
+                      <div className="relative h-48 w-full bg-background-light">
                         <Image
                           src={getCloudinaryUrl(post.coverId, {
                             width: 400,
@@ -64,14 +64,14 @@ export default async function UpdatesPage({
                       </div>
                     )}
                     <CardContent className="p-6">
-                      <div className="text-sm text-gray-500 mb-2">
+                      <div className="text-sm text-text-primary/60 mb-2">
                         {formatDate(post.publishedAt!, locale)}
                       </div>
-                      <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2">
+                      <h3 className="text-lg font-bold text-text-primary mb-2 line-clamp-2">
                         {content.title}
                       </h3>
                       {content.summary && (
-                        <p className="text-gray-600 text-sm line-clamp-3">
+                        <p className="text-text-primary text-sm line-clamp-3">
                           {content.summary}
                         </p>
                       )}
@@ -83,6 +83,6 @@ export default async function UpdatesPage({
           </div>
         )}
       </Container>
-    </div>
+    </section>
   );
 }

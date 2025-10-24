@@ -22,8 +22,8 @@ export function LangSwitcher() {
           onClick={() => switchLocale(locale)}
           className={`px-3 py-1 rounded-lg text-sm transition-colors ${
             currentLocale === locale
-              ? "bg-brand text-white"
-              : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+              ? "bg-primary text-white"
+              : "bg-background-sand text-text-primary hover:bg-border"
           }`}
         >
           {localeNames[locale]}

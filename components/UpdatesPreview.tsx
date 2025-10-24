@@ -14,12 +14,12 @@ export async function UpdatesPreview({ locale }: { locale: string }) {
   // Guard against missing DATABASE_URL during build
   if (!process.env.DATABASE_URL) {
     return (
-      <section className="py-16 md:py-24 bg-beige">
+      <section className="py-16 md:py-24 bg-background-sand">
         <Container>
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-text-primary mb-12">
             {t("updates.title")}
           </h2>
-          <p className="text-center text-gray-600">{t("ui.noPosts")}</p>
+          <p className="text-center text-text-primary">{t("ui.noPosts")}</p>
         </Container>
       </section>
     );
@@ -39,21 +39,21 @@ export async function UpdatesPreview({ locale }: { locale: string }) {
 
     if (posts.length === 0) {
       return (
-        <section className="py-16 md:py-24 bg-beige">
+        <section className="py-16 md:py-24 bg-background-sand">
           <Container>
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-text-primary mb-12">
               {t("updates.title")}
             </h2>
-            <p className="text-center text-gray-600">{t("ui.noPosts")}</p>
+            <p className="text-center text-text-primary">{t("ui.noPosts")}</p>
           </Container>
         </section>
       );
     }
 
     return (
-      <section className="py-16 md:py-24 bg-beige">
+      <section className="py-16 md:py-24 bg-background-sand">
         <Container>
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-text-primary mb-12">
             {t("updates.title")}
           </h2>
 
@@ -66,7 +66,7 @@ export async function UpdatesPreview({ locale }: { locale: string }) {
                 <Link key={post.id} href={`/updates/${post.slug}` as any}>
                   <Card className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                     {post.coverId && (
-                      <div className="relative h-48 w-full bg-gray-100">
+                      <div className="relative h-48 w-full bg-background-light">
                         <Image
                           src={getCloudinaryUrl(post.coverId, { width: 400, height: 300 })}
                           alt={content.title}
@@ -76,14 +76,14 @@ export async function UpdatesPreview({ locale }: { locale: string }) {
                       </div>
                     )}
                     <CardContent className="p-6">
-                      <div className="text-sm text-gray-500 mb-2">
+                      <div className="text-sm text-text-primary/60 mb-2">
                         {formatDate(post.publishedAt!, locale)}
                       </div>
-                      <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2">
+                      <h3 className="text-lg font-bold text-text-primary mb-2 line-clamp-2">
                         {content.title}
                       </h3>
                       {content.summary && (
-                        <p className="text-gray-600 text-sm line-clamp-3">
+                        <p className="text-text-primary text-sm line-clamp-3">
                           {content.summary}
                         </p>
                       )}
@@ -105,12 +105,12 @@ export async function UpdatesPreview({ locale }: { locale: string }) {
   } catch (error) {
     console.error("Failed to load updates:", error);
     return (
-      <section className="py-16 md:py-24 bg-beige">
+      <section className="py-16 md:py-24 bg-background-sand">
         <Container>
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-text-primary mb-12">
             {t("updates.title")}
           </h2>
-          <p className="text-center text-gray-600">{t("ui.noPosts")}</p>
+          <p className="text-center text-text-primary">{t("ui.noPosts")}</p>
         </Container>
       </section>
     );

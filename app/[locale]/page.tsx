@@ -9,7 +9,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <>
-      <Hero />
+      <section className="bg-background-light">
+        <Hero />
+      </section>
       <ProgramCards />
       <UpdatesPreview locale={locale} />
     </>

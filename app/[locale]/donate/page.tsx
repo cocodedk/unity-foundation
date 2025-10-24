@@ -21,22 +21,22 @@ export default function DonatePage() {
   };
 
   return (
-    <div className="py-16 md:py-24">
+    <section className="py-16 md:py-24 bg-background-light">
       <Container>
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-8 text-center">
           {t("donate.title")}
         </h1>
 
         <div className="max-w-2xl mx-auto space-y-8">
-          <Card className="border-2 border-brand">
+          <Card className="border-2 border-primary">
             <CardHeader>
-              <h2 className="text-2xl font-bold text-center text-brand">
+              <h2 className="text-2xl font-bold text-center text-primary">
                 {t("donate.mobilePay")}
               </h2>
             </CardHeader>
             <CardContent className="text-center">
-              <div className="bg-beige rounded-xl p-6 mb-6">
-                <div className="text-4xl font-bold text-brand mb-4">
+              <div className="bg-background-sand rounded-lg p-6 mb-6">
+                <div className="text-4xl font-bold text-primary mb-4">
                   {mobilePayNumber}
                 </div>
                 <Button
@@ -60,21 +60,21 @@ export default function DonatePage() {
               </div>
 
               {/* QR Code placeholder */}
-              <div className="w-48 h-48 mx-auto bg-gray-100 rounded-xl flex items-center justify-center">
-                <span className="text-gray-400">{t("ui.qr")}</span>
+              <div className="w-48 h-48 mx-auto bg-background-sand rounded-lg flex items-center justify-center">
+                <span className="text-text-primary/50">{t("ui.qr")}</span>
               </div>
             </CardContent>
           </Card>
 
           <Card>
             <CardContent className="p-8">
-              <p className="text-lg text-gray-700 leading-relaxed text-center">
+              <p className="text-lg text-text-primary leading-relaxed text-center">
                 {t("donate.impactBlurb")}
               </p>
             </CardContent>
           </Card>
         </div>
       </Container>
-    </div>
+    </section>
   );
 }

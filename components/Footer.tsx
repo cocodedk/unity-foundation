@@ -20,23 +20,23 @@ export async function Footer() {
   ];
 
   return (
-    <footer className="bg-gray-50 border-t border-gray-100 mt-16">
+    <footer className="bg-text-primary border-t border-border mt-16">
       <Container>
         <div className="py-12 md:py-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Brand */}
             <div>
-              <h3 className="text-xl font-bold text-brand mb-4">
+              <h3 className="text-xl font-bold text-primary mb-4">
                 {t("siteName")}
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-text-light text-sm leading-relaxed">
                 {t("footer.blurb")}
               </p>
             </div>
 
             {/* Links */}
             <div>
-              <h4 className="font-semibold text-gray-900 mb-4">
+              <h4 className="font-semibold text-text-light mb-4">
                 {t("footer.links")}
               </h4>
               <ul className="space-y-2">
@@ -44,7 +44,7 @@ export async function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href as any}
-                      className="text-gray-600 hover:text-brand transition-colors text-sm"
+                      className="text-text-light hover:text-primary transition-colors text-sm"
                     >
                       {link.label}
                     </Link>
@@ -55,14 +55,14 @@ export async function Footer() {
 
             {/* Contact */}
             <div>
-              <h4 className="font-semibold text-gray-900 mb-4">
+              <h4 className="font-semibold text-text-light mb-4">
                 {t("footer.contact")}
               </h4>
               <ul className="space-y-2 text-sm">
                 <li>
                   <a
                     href="mailto:contact@unityfoundation.org"
-                    className="text-gray-600 hover:text-brand transition-colors"
+                    className="text-text-light hover:text-primary transition-colors"
                   >
                     contact@unityfoundation.org
                   </a>
@@ -72,7 +72,7 @@ export async function Footer() {
                     href="https://t.me/unity_foundation"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-brand transition-colors"
+                    className="text-text-light hover:text-primary transition-colors"
                   >
                     {t("footer.telegram")}
                   </a>
@@ -82,9 +82,9 @@ export async function Footer() {
           </div>
 
           {/* Bottom Bar */}
-          <div className="mt-12 pt-8 border-t border-gray-200">
+          <div className="mt-12 pt-8 border-t border-border">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-text-light/70">
                 © {new Date().getFullYear()} {t("siteName")}. {t("footer.allRights")}.
               </p>
               <div className="flex gap-4">
@@ -92,14 +92,14 @@ export async function Footer() {
                   <Link
                     key={link.href}
                     href={link.href as any}
-                    className="text-sm text-gray-600 hover:text-brand transition-colors"
+                    className="text-sm text-text-light hover:text-primary transition-colors"
                   >
                     {link.label}
                   </Link>
                 ))}
               </div>
             </div>
-            <p className="text-xs text-gray-400 mt-4 text-center md:text-left">
+            <p className="text-xs text-text-light/50 mt-4 text-center md:text-left">
               {t("about.adminTitle")}: {t("about.adminText")}
             </p>
           </div>

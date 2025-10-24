@@ -7,7 +7,6 @@ import { Menu, X } from "lucide-react";
 import { LangSwitcher } from "./LangSwitcher";
 import { Container } from "./ui/Container";
 import { cn } from "@/lib/utils";
-import { Route } from "next";
 
 export function Header() {
   const t = useTranslations();
@@ -23,12 +22,12 @@ export function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+    <header className="sticky top-0 z-50 bg-background-light/95 backdrop-blur-sm border-b border-border">
       <Container>
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/">
-            <span className="text-xl md:text-2xl font-bold text-brand">
+            <span className="text-xl md:text-2xl font-bold text-primary">
               {t("siteName")}
             </span>
           </Link>
@@ -39,7 +38,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href as any}
-                className="text-gray-700 hover:text-brand transition-colors"
+                className="text-text-primary hover:text-primary transition-colors"
               >
                 {item.label}
               </Link>
@@ -53,7 +52,7 @@ export function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-gray-700"
+            className="md:hidden p-2 text-text-primary"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -73,13 +72,13 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href as any}
-                className="text-gray-700 hover:text-brand transition-colors"
+                className="text-text-primary hover:text-primary transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
-            <div className="pt-4 border-t border-gray-100">
+            <div className="pt-4 border-t border-border">
               <LangSwitcher />
             </div>
           </nav>

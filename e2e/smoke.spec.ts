@@ -5,14 +5,14 @@ test.describe('Public site smoke', () => {
     await page.goto('/en');
     await expect(page.locator('header')).toBeVisible();
     await expect(page.getByRole('heading', {level: 1})).toBeVisible();
-    await expect(page.getByText(/dignity.*opportunity.*relief/i)).toBeVisible();
+    await expect(page.getByText(/together.*we create/i)).toBeVisible();
   });
 
-  test('Donate CTA navigates to donate page', async ({page}) => {
+  test('CTA navigates to support page', async ({page}) => {
     await page.goto('/en');
-    await page.getByRole('link', {name: /donate now/i}).click();
+    await page.getByRole('link', {name: /get started now/i}).click();
     await expect(page).toHaveURL(/\/en\/donate/);
-    await expect(page.getByRole('heading', {name: /donate/i})).toBeVisible();
+    await expect(page.getByRole('heading', {name: /support our mission/i})).toBeVisible();
     await expect(page.getByText(/mobilepay/i)).toBeVisible();
   });
 
@@ -27,15 +27,15 @@ test.describe('Public site smoke', () => {
 
   test('Updates page shows empty state or posts', async ({page}) => {
     await page.goto('/en/updates');
-    await expect(page.getByRole('heading', {name: /latest updates/i})).toBeVisible();
+    await expect(page.getByRole('heading', {name: /latest stories/i})).toBeVisible();
     // May show posts or empty state depending on database
-    const hasContent = await page.getByText(/no posts yet/i).isVisible().catch(() => false);
+    const hasContent = await page.getByText(/no stories yet/i).isVisible().catch(() => false);
     expect(hasContent !== undefined).toBeTruthy();
   });
 
   test('Program cards are visible on homepage', async ({page}) => {
     await page.goto('/en');
-    await expect(page.getByText(/what we do/i)).toBeVisible();
+    await expect(page.getByRole('heading', {name: /how we help/i})).toBeVisible();
     await expect(page.getByRole('heading', {name: 'Children'})).toBeVisible();
     await expect(page.getByRole('heading', {name: 'Disability'})).toBeVisible();
     await expect(page.getByRole('heading', {name: 'Poverty Relief'})).toBeVisible();

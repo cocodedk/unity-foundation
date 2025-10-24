@@ -3,40 +3,40 @@
   "nav": {
     "home": "Forside",
     "about": "Om os",
-    "programs": "Indsatser",
+    "programs": "Vores arbejde",
     "updates": "Opdateringer",
-    "donate": "Donér",
-    "contact": "Kontakt"
+    "donate": "Støt os",
+    "contact": "Kontakt os"
   },
   "hero": {
-    "title": "Værdighed, muligheder og hjælp til alle",
-    "subtitle": "Vi støtter børn, mennesker med handicap og mennesker i fattigdom.",
-    "cta": "Donér nu"
+    "title": "Sammen skaber vi værdighed og muligheder for alle",
+    "subtitle": "Vi støtter børn, mennesker med handicap og familier i nød. Med din hjælp kan vi gøre en reel forskel.",
+    "cta": "Kom i gang nu"
   },
   "updates": {
-    "title": "Seneste nyt",
+    "title": "Seneste historier",
     "readMore": "Læs mere"
   },
-  
+
   "footer": {
-    "blurb": "Unity Foundation er en ikke-statslig, ikke-politisk, græsrodsorganisation.",
+    "blurb": "Unity Foundation er en uafhængig, græsrodsorganisation dedikeret til at støtte sårbare samfund gennem direkte og meningsfuldt arbejde.",
     "telegram": "Telegram",
     "allRights": "Alle rettigheder forbeholdes",
-    "links": "Links",
-    "contact": "Kontakt"
+    "links": "Udforsk",
+    "contact": "Kontakt os"
   },
   "about": {
-    "title": "Om os",
-    "intro": "Unity Foundation er en ikke-statslig, ikke-politisk, græsrodsorganisation. Vi støtter børn, mennesker med handicap og mennesker i fattigdom.",
+    "title": "Hvordan vi hjælper",
+    "intro": "Unity Foundation er en uafhængig, græsrodsorganisation. Vi støtter børn, mennesker med handicap og familier i fattigdom gennem direkte bistand, uddannelse og samfundsprogrammer.",
     "founderTitle": "Stifter",
     "founderName": "Mandana Zaboli",
     "adminTitle": "Administration",
     "adminText": "cocode.dk / Babak Bandpey"
   },
   "ui": {
-    "viewAll": "Se alle",
-    "noPosts": "Ingen opslag endnu.",
-    "qr": "QR",
+    "viewAll": "Se alle historier",
+    "noPosts": "Ingen historier endnu.",
+    "qr": "QR-kode",
     "comingSoon": "Kommer snart."
   },
   "legal": {
@@ -47,33 +47,33 @@
   },
   "getInvolved": {
     "title": "Vær med",
-    "intro": "Bliv frivillig, partner eller støt i naturalier. Kommer snart."
+    "intro": "Bliv en del af vores mission. Bliv frivillig, samarbejd med os, eller støt os materielt. Lad os arbejde sammen for at gøre en forskel. Kommer snart."
   },
   "contact": {
-    "title": "Kontakt",
-    "emailBlurb": "For generelle henvendelser, skriv til",
-    "telegram": "Telegram",
-    "comingSoon": "Kontaktformularen kommer snart."
+    "title": "Lad os tale",
+    "emailBlurb": "Har du spørgsmål? Kontakt os på",
+    "telegram": "Chat med os på Telegram",
+    "comingSoon": "Kontaktformular kommer snart. I mellemtiden kan du emaile os direkte."
   },
   "banner": {
-    "prefix": "Donér via MobilePay:"
+    "prefix": "Støt os via MobilePay:"
   },
   "programs": {
-    "title": "Hvad vi gør",
+    "title": "Hvordan vi hjælper",
     "children": "Børn",
     "disability": "Handicap",
     "poverty": "Fattigdomsbekæmpelse",
     "desc": {
-      "children": "Uddannelse, ernæring og tryghed.",
-      "disability": "Tilgængelighed, inklusion og støtte.",
-      "poverty": "Hjælp, levebrød og værdighed."
+      "children": "Uddannelse, ernæring og sikre steder hvor børn trives.",
+      "disability": "Tilgængelighed, inklusion og den støtte der skal til for at leve med værdighed.",
+      "poverty": "Direkte bistand, leverbrødsprogrammer og veje til stabilitet."
     }
   },
   "donate": {
-    "title": "Donér",
-    "mobilePay": "MobilePay Box",
+    "title": "Støt vores mission",
+    "mobilePay": "MobilePay",
     "copy": "Kopiér",
     "copied": "Kopieret!",
-    "impactBlurb": "Donationer støtter børn, mennesker med handicap og mennesker i fattigdom. Tak for din gavmildhed."
+    "impactBlurb": "Din donation støtter direkte børn, mennesker med handicap og familier i nød. Sammen bygger vi en mere medfølende verden. Tak skal du have."
   }
 }

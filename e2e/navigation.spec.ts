@@ -7,27 +7,27 @@ test.describe('Header and footer navigation', () => {
     // Test About navigation
     await page.getByRole('link', {name: 'About'}).first().click();
     await expect(page).toHaveURL(/\/en\/about/);
-    await expect(page.getByRole('heading', {name: /about/i})).toBeVisible();
+    await expect(page.getByRole('heading', {name: /how we help/i})).toBeVisible();
 
     // Test Programs navigation
-    await page.getByRole('link', {name: 'Programs'}).first().click();
+    await page.getByRole('link', {name: 'Our Work'}).first().click();
     await expect(page).toHaveURL(/\/en\/programs/);
-    await expect(page.getByRole('heading', {name: /what we do/i})).toBeVisible();
+    await expect(page.getByRole('heading', {name: /how we help/i})).toBeVisible();
 
     // Test Updates navigation
     await page.getByRole('link', {name: 'Updates'}).first().click();
     await expect(page).toHaveURL(/\/en\/updates/);
-    await expect(page.getByRole('heading', {name: /latest updates/i})).toBeVisible();
+    await expect(page.getByRole('heading', {name: /latest stories/i})).toBeVisible();
 
-    // Test Donate navigation
-    await page.getByRole('link', {name: 'Donate'}).first().click();
+    // Test Support Us navigation
+    await page.getByRole('link', {name: 'Support Us'}).first().click();
     await expect(page).toHaveURL(/\/en\/donate/);
-    await expect(page.getByRole('heading', {name: /donate/i})).toBeVisible();
+    await expect(page.getByRole('heading', {name: /support our mission/i})).toBeVisible();
 
     // Test Contact navigation
-    await page.getByRole('link', {name: 'Contact'}).first().click();
+    await page.getByRole('link', {name: 'Get in Touch'}).first().click();
     await expect(page).toHaveURL(/\/en\/contact/);
-    await expect(page.getByRole('heading', {name: /contact/i, level: 1})).toBeVisible();
+    await expect(page.getByRole('heading', {name: /let's talk/i, level: 1})).toBeVisible();
   });
 
   test('Footer links exist and are clickable', async ({page}) => {
@@ -37,10 +37,11 @@ test.describe('Header and footer navigation', () => {
 
     // Check main navigation links in footer
     await expect(footer.getByRole('link', {name: 'About', exact: true})).toBeVisible();
-    await expect(footer.getByRole('link', {name: 'Programs', exact: true})).toBeVisible();
+    await expect(footer.getByRole('link', {name: 'Our Work', exact: true})).toBeVisible();
     await expect(footer.getByRole('link', {name: 'Updates', exact: true})).toBeVisible();
-    await expect(footer.getByRole('link', {name: 'Donate', exact: true})).toBeVisible();
-    await expect(footer.getByRole('link', {name: 'Contact', exact: true})).toBeVisible();
+    await expect(footer.getByRole('link', {name: 'Support Us', exact: true})).toBeVisible();
+    // Footer contact section header
+    await expect(footer.getByText(/contact us/i)).toBeVisible();
   });
 
   test('Legal links in footer work', async ({page}) => {

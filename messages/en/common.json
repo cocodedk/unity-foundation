@@ -3,40 +3,40 @@
   "nav": {
     "home": "Home",
     "about": "About",
-    "programs": "Programs",
+    "programs": "Our Work",
     "updates": "Updates",
-    "donate": "Donate",
-    "contact": "Contact"
+    "donate": "Support Us",
+    "contact": "Get in Touch"
   },
   "hero": {
-    "title": "Dignity, opportunity, and relief for all",
-    "subtitle": "Supporting children, people with disabilities, and people experiencing poverty.",
-    "cta": "Donate Now"
+    "title": "Together, we create dignity and opportunity for everyone",
+    "subtitle": "We support children, people with disabilities, and families in need. With your help, we can make a real difference.",
+    "cta": "Get Started Now"
   },
   "updates": {
-    "title": "Latest Updates",
+    "title": "Latest Stories",
     "readMore": "Read more"
   },
-  
+
   "footer": {
-    "blurb": "Unity Foundation is a non-governmental, non-political, grassroots charity.",
+    "blurb": "Unity Foundation is an independent, grassroots charity dedicated to supporting vulnerable communities with direct, meaningful aid.",
     "telegram": "Telegram",
     "allRights": "All rights reserved",
-    "links": "Links",
-    "contact": "Contact"
+    "links": "Explore",
+    "contact": "Contact Us"
   },
   "about": {
-    "title": "About",
-    "intro": "Unity Foundation is a non-governmental, non-political, grassroots charity. We support children, people with disabilities, and people experiencing poverty.",
+    "title": "How We Help",
+    "intro": "Unity Foundation is an independent, grassroots charity. We support children, people with disabilities, and families experiencing poverty through direct aid, education, and community programs.",
     "founderTitle": "Founder",
     "founderName": "Mandana Zaboli",
     "adminTitle": "Administration",
     "adminText": "cocode.dk / Babak Bandpey"
   },
   "ui": {
-    "viewAll": "View all",
-    "noPosts": "No posts yet.",
-    "qr": "QR",
+    "viewAll": "View all stories",
+    "noPosts": "No stories yet.",
+    "qr": "QR Code",
     "comingSoon": "Coming soon."
   },
   "legal": {
@@ -47,33 +47,33 @@
   },
   "getInvolved": {
     "title": "Get Involved",
-    "intro": "Volunteer, partner, or support in-kind. Coming soon."
+    "intro": "Join our mission. Volunteer your time, partner with us, or support us in-kind. Let's work together to make an impact. Coming soon."
   },
   "contact": {
-    "title": "Contact",
-    "emailBlurb": "For general inquiries, please email",
-    "telegram": "Telegram",
-    "comingSoon": "Contact form will be available soon."
+    "title": "Let's Talk",
+    "emailBlurb": "Got questions? Reach out to us",
+    "telegram": "Chat with us on Telegram",
+    "comingSoon": "Contact form coming soon. In the meantime, email us directly."
   },
   "banner": {
-    "prefix": "Donate via MobilePay:"
+    "prefix": "Support us via MobilePay:"
   },
   "programs": {
-    "title": "What We Do",
+    "title": "How We Help",
     "children": "Children",
     "disability": "Disability",
     "poverty": "Poverty Relief",
     "desc": {
-      "children": "Education, nutrition, and safety.",
-      "disability": "Accessibility, inclusion, and support.",
-      "poverty": "Relief, livelihood, and dignity."
+      "children": "Education, nutrition, and safe spaces where children thrive.",
+      "disability": "Accessibility, inclusion, and the support needed to live with dignity.",
+      "poverty": "Direct aid, livelihood programs, and pathways to stability."
     }
   },
   "donate": {
-    "title": "Donate",
-    "mobilePay": "MobilePay Box",
+    "title": "Support Our Mission",
+    "mobilePay": "MobilePay",
     "copy": "Copy",
     "copied": "Copied!",
-    "impactBlurb": "Donations support children, people with disabilities, and people experiencing poverty. Thank you for your generosity."
+    "impactBlurb": "Your donation directly supports children, people with disabilities, and families in need. Together, we're building a more compassionate world. Thank you."
   }
 }
