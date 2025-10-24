@@ -1,0 +1,38 @@
+{
+  "siteName": "Unity Foundation",
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "programs": "Programs",
+    "updates": "Updates",
+    "donate": "Donate",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Dignity, opportunity, and relief for all",
+    "subtitle": "Supporting children, people with disabilities, and people experiencing poverty.",
+    "cta": "Donate Now"
+  },
+  "programs": {
+    "title": "What We Do",
+    "children": "Children",
+    "disability": "Disability",
+    "poverty": "Poverty Relief"
+  },
+  "updates": {
+    "title": "Latest Updates",
+    "readMore": "Read more"
+  },
+  "donate": {
+    "title": "Donate",
+    "mobilePay": "MobilePay Box",
+    "copy": "Copy",
+    "copied": "Copied!"
+  },
+  "footer": {
+    "blurb": "Unity Foundation is a non-governmental, non-political, grassroots charity.",
+    "telegram": "Telegram",
+    "allRights": "All rights reserved"
+  }
+}
+

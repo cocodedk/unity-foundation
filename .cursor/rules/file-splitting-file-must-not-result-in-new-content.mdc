@@ -1,0 +1,6 @@
+---
+alwaysApply: true
+description: File splitting and documentation guidelines
+---
+# File Splitting Rule
+When splitting files, the total line count must NOT increase significantly. Splitting is for organization, not duplication. If splitting results in more total lines (due to headers, repeated context, etc.), write new content or code instead of just reorganizing existing content.

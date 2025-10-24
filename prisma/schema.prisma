@@ -1,0 +1,101 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  password  String
+  role      Role     @default(EDITOR)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  posts     Post[]
+}
+
+enum Role {
+  ADMIN
+  EDITOR
+  TRANSLATOR
+}
+
+model Post {
+  id          String     @id @default(cuid())
+  slug        String     @unique
+  status      PostStatus @default(DRAFT)
+  coverId     String?
+  gallery     String[]
+  authorId    String
+  author      User       @relation(fields: [authorId], references: [id])
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  publishedAt DateTime?
+  i18n        PostI18n[]
+  tags        PostTag[]
+}
+
+enum PostStatus {
+  DRAFT
+  PUBLISHED
+}
+
+model PostI18n {
+  id      String @id @default(cuid())
+  locale  String
+  title   String
+  summary String?
+  body    String
+  postId  String
+  post    Post   @relation(fields: [postId], references: [id])
+
+  @@unique([postId, locale])
+}
+
+model Tag {
+  id     String   @id @default(cuid())
+  key    String   @unique
+  labels TagI18n[]
+  posts  PostTag[]
+}
+
+model TagI18n {
+  id     String @id @default(cuid())
+  locale String
+  label  String
+  tagId  String
+  tag    Tag    @relation(fields: [tagId], references: [id])
+
+  @@unique([tagId, locale])
+}
+
+model PostTag {
+  post   Post @relation(fields: [postId], references: [id])
+  postId String
+  tag    Tag  @relation(fields: [tagId], references: [id])
+  tagId  String
+
+  @@id([postId, tagId])
+}
+
+model Announcement {
+  id        Int                 @id @default(1)
+  enabled   Boolean             @default(false)
+  mobilePay String
+  i18n      AnnouncementI18n[]
+}
+
+model AnnouncementI18n {
+  id            String        @id @default(cuid())
+  locale        String
+  bannerText    String
+  announcement  Announcement  @relation(fields: [announcementId], references: [id])
+  announcementId Int
+
+  @@unique([announcementId, locale])
+}

@@ -1,0 +1,38 @@
+{
+  "siteName": "Unity Foundation",
+  "nav": {
+    "home": "Forside",
+    "about": "Om os",
+    "programs": "Indsatser",
+    "updates": "Opdateringer",
+    "donate": "Donér",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Værdighed, muligheder og hjælp til alle",
+    "subtitle": "Vi støtter børn, mennesker med handicap og mennesker i fattigdom.",
+    "cta": "Donér nu"
+  },
+  "programs": {
+    "title": "Hvad vi gør",
+    "children": "Børn",
+    "disability": "Handicap",
+    "poverty": "Fattigdomsbekæmpelse"
+  },
+  "updates": {
+    "title": "Seneste nyt",
+    "readMore": "Læs mere"
+  },
+  "donate": {
+    "title": "Donér",
+    "mobilePay": "MobilePay Box",
+    "copy": "Kopiér",
+    "copied": "Kopieret!"
+  },
+  "footer": {
+    "blurb": "Unity Foundation er en ikke-statslig, ikke-politisk, græsrodsorganisation.",
+    "telegram": "Telegram",
+    "allRights": "Alle rettigheder forbeholdes"
+  }
+}
+
