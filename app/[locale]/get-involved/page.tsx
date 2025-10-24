@@ -1,11 +1,27 @@
-import {useTranslations} from 'next-intl';
+import { getTranslations } from "next-intl/server";
+import { Container } from "@/components/ui/Container";
+import { Card, CardContent } from "@/components/ui/Card";
 
-export default function GetInvolvedPage() {
-  const t = useTranslations('getInvolved');
+export default async function GetInvolvedPage() {
+  const t = await getTranslations();
+
   return (
-    <div className="prose">
-      <h1>{t('title')}</h1>
-      <p>{t('intro')}</p>
+    <div className="py-16 md:py-24">
+      <Container>
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center">
+          {t("getInvolved.title")}
+        </h1>
+
+        <div className="max-w-2xl mx-auto">
+          <Card>
+            <CardContent className="p-8 text-center">
+              <p className="text-lg text-gray-700">
+                {t("getInvolved.intro")}
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </Container>
     </div>
   );
 }

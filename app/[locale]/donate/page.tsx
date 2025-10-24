@@ -1,40 +1,80 @@
 "use client";
-import {useTranslations} from 'next-intl';
-import {useState} from 'react';
+
+import { useState } from "react";
+import { useTranslations } from "next-intl";
+import { Copy, Check } from "lucide-react";
+import { Container } from "@/components/ui/Container";
+import { Card, CardContent, CardHeader } from "@/components/ui/Card";
+import { Button } from "@/components/ui/Button";
 
 export default function DonatePage() {
-  const t = useTranslations('donate');
+  const t = useTranslations();
   const [copied, setCopied] = useState(false);
-  // In v1, fetch from /api/announcement; placeholder env var fallback
-  const mobilePay = process.env.NEXT_PUBLIC_MOBILEPAY_BOX || 'XXXXXX';
 
-  const copy = async () => {
-    await navigator.clipboard.writeText(mobilePay);
+  // This would normally come from the API/database
+  const mobilePayNumber = "12345678";
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(mobilePayNumber);
     setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
-    <div className="space-y-6">
-      <h1 className="text-3xl font-semibold">{t('title')}</h1>
-      <div className="rounded-xl bg-beige p-6 shadow-soft">
-        <p className="text-lg">
-          {t('mobilePay')}: <span className="font-mono text-2xl">{mobilePay}</span>
-        </p>
-        <div className="mt-4 flex items-center gap-3">
-          <button
-            onClick={copy}
-            className="rounded-md bg-brand px-4 py-2 text-white hover:bg-brand-dark"
-          >
-            {copied ? t('copied') : t('copy')}
-          </button>
-          {/* QR placeholder; admin-managed in v1 */}
-          <div className="h-24 w-24 rounded-md bg-white ring-1 ring-slate-200 grid place-content-center text-xs text-slate-500">
-            {useTranslations('ui')('qr')}
-          </div>
+    <div className="py-16 md:py-24">
+      <Container>
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center">
+          {t("donate.title")}
+        </h1>
+
+        <div className="max-w-2xl mx-auto space-y-8">
+          <Card className="border-2 border-brand">
+            <CardHeader>
+              <h2 className="text-2xl font-bold text-center text-brand">
+                {t("donate.mobilePay")}
+              </h2>
+            </CardHeader>
+            <CardContent className="text-center">
+              <div className="bg-beige rounded-xl p-6 mb-6">
+                <div className="text-4xl font-bold text-brand mb-4">
+                  {mobilePayNumber}
+                </div>
+                <Button
+                  variant="secondary"
+                  size="sm"
+                  onClick={copyToClipboard}
+                  className="gap-2"
+                >
+                  {copied ? (
+                    <>
+                      <Check size={16} />
+                      {t("donate.copied")}
+                    </>
+                  ) : (
+                    <>
+                      <Copy size={16} />
+                      {t("donate.copy")}
+                    </>
+                  )}
+                </Button>
+              </div>
+
+              {/* QR Code placeholder */}
+              <div className="w-48 h-48 mx-auto bg-gray-100 rounded-xl flex items-center justify-center">
+                <span className="text-gray-400">{t("ui.qr")}</span>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-8">
+              <p className="text-lg text-gray-700 leading-relaxed text-center">
+                {t("donate.impactBlurb")}
+              </p>
+            </CardContent>
+          </Card>
         </div>
-      </div>
-      <p className="text-slate-700">{t('impactBlurb')}</p>
+      </Container>
     </div>
   );
 }

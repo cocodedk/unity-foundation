@@ -1,32 +1,34 @@
 "use client";
-import {usePathname} from 'next/navigation';
-import Link from 'next/link';
-import {Locale, locales, localeNames} from '@/i18n/config';
 
-function swapLocale(path: string, to: Locale) {
-  const parts = path.split('/').filter(Boolean);
-  if (parts.length === 0) return `/${to}`;
-  parts[0] = to;
-  return `/${parts.join('/')}`;
-}
+import { usePathname, useRouter } from "next/navigation";
+import { locales, localeNames, type Locale } from "@/i18n/config";
 
-export default function LangSwitcher({locale}: {locale: Locale}) {
-  const pathname = usePathname() || '/';
+export function LangSwitcher() {
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const currentLocale = pathname.split("/")[1] as Locale;
+
+  const switchLocale = (locale: Locale) => {
+    const pathWithoutLocale = pathname.split("/").slice(2).join("/");
+    router.push(`/${locale}/${pathWithoutLocale}`);
+  };
+
   return (
-    <div className="flex gap-1">
-      {locales.map((l) => (
-        <Link
-          key={l}
-          href={swapLocale(pathname, l)}
-          className={`rounded px-2 py-1 text-sm ${
-            l === locale ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-700'
+    <div className="flex gap-2">
+      {locales.map((locale) => (
+        <button
+          key={locale}
+          onClick={() => switchLocale(locale)}
+          className={`px-3 py-1 rounded-lg text-sm transition-colors ${
+            currentLocale === locale
+              ? "bg-brand text-white"
+              : "bg-gray-100 text-gray-700 hover:bg-gray-200"
           }`}
-          prefetch={false}
         >
-          {localeNames[l]}
-        </Link>
+          {localeNames[locale]}
+        </button>
       ))}
     </div>
   );
 }
-

@@ -1,23 +1,31 @@
-import {headers} from 'next/headers';
+"use client";
 
-export default async function DonationBannerInner() {
-  // Placeholder fetch to API; returns enabled=false by default
-  const h = await headers();
-  const base = h.get('x-url-base') || '';
-  try {
-    const res = await fetch(`${base}/api/announcement`, {cache: 'no-store'});
-    const data = await res.json();
-    if (!data?.enabled) return null;
-    return (
-      <div className="w-full bg-brand text-white">
-        <div className="container py-2 text-sm">
-          <span className="font-medium">{data.bannerText || 'Donate via MobilePay:'}</span>
-          {data.mobilePay ? <span className="ml-2 font-mono">{data.mobilePay}</span> : null}
-        </div>
-      </div>
-    );
-  } catch {
-    return null;
-  }
+import { useTranslations } from "next-intl";
+import { Container } from "./ui/Container";
+
+interface DonationBannerInnerProps {
+  text: string;
+  mobilePayNumber: string;
 }
 
+export function DonationBannerInner({
+  text,
+  mobilePayNumber
+}: DonationBannerInnerProps) {
+  const t = useTranslations();
+
+  return (
+    <div className="bg-accent/10 border-b border-accent/20 py-3">
+      <Container>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-sm md:text-base">
+          <span className="text-gray-700">
+            {text || t("banner.prefix")}
+          </span>
+          <span className="font-bold text-brand bg-white px-4 py-1 rounded-full">
+            {mobilePayNumber}
+          </span>
+        </div>
+      </Container>
+    </div>
+  );
+}

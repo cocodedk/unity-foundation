@@ -1,12 +1,31 @@
-import {Suspense} from 'react';
-import DonationBannerInner from './DonationBannerInner';
+import { prisma } from "@/lib/prisma";
+import { DonationBannerInner } from "./DonationBannerInner";
 
-export default function DonationBanner() {
-  return (
-    <Suspense fallback={null}>
-      {/* @ts-expect-error Async Server Component */}
-      <DonationBannerInner />
-    </Suspense>
-  );
+export async function DonationBanner({ locale }: { locale: string }) {
+  try {
+    const announcement = await prisma.announcement.findUnique({
+      where: { id: 1 },
+      include: {
+        i18n: {
+          where: { locale }
+        }
+      }
+    }).catch(() => null);
+
+    if (!announcement || !announcement.enabled) {
+      return null;
+    }
+
+    const text = announcement.i18n[0]?.bannerText || "";
+
+    return (
+      <DonationBannerInner
+        text={text}
+        mobilePayNumber={announcement.mobilePay}
+      />
+    );
+  } catch (error) {
+    console.error("Failed to load donation banner:", error);
+    return null;
+  }
 }
-

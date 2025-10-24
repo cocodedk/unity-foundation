@@ -1,9 +1,17 @@
-import {NextResponse} from 'next/server';
+import { NextRequest, NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma";
 
-export async function GET(req: Request) {
-  const {searchParams} = new URL(req.url);
-  const locale = searchParams.get('locale') || 'en';
-  // Placeholder list
-  return NextResponse.json({items: [], locale});
+export async function GET(request: NextRequest) {
+  const { searchParams } = new URL(request.url);
+  const locale = searchParams.get("locale") || "en";
+
+  const tags = await prisma.tag.findMany({
+    include: {
+      labels: {
+        where: { locale }
+      }
+    }
+  });
+
+  return NextResponse.json(tags);
 }
-

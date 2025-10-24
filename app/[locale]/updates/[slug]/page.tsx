@@ -1,15 +1,86 @@
-interface Props {
-  params: {slug: string};
-}
+import { notFound } from "next/navigation";
+import Image from "next/image";
+import { prisma } from "@/lib/prisma";
+import { Container } from "@/components/ui/Container";
+import { formatDate } from "@/lib/utils";
+import { getCloudinaryUrl } from "@/lib/cloudinary";
 
-export default function UpdateDetail({params}: Props) {
-  const {slug} = params;
-  // TODO: Fetch post by slug and render localized fields
+export default async function UpdatePage({
+  params
+}: {
+  params: { locale: string; slug: string };
+}) {
+  const post = await prisma.post.findUnique({
+    where: { slug: params.slug, status: "PUBLISHED" },
+    include: {
+      i18n: {
+        where: { locale: params.locale }
+      },
+      author: {
+        select: { name: true, email: true }
+      }
+    }
+  });
+
+  if (!post || !post.i18n[0]) {
+    notFound();
+  }
+
+  const content = post.i18n[0];
+
   return (
-    <article className="prose">
-      <h1>Update: {slug}</h1>
-      <p>Coming soon.</p>
+    <article className="py-16 md:py-24">
+      <Container>
+        <div className="max-w-4xl mx-auto">
+          {/* Header */}
+          <header className="mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              {content.title}
+            </h1>
+            <div className="text-gray-600">
+              {formatDate(post.publishedAt!, params.locale)}
+            </div>
+          </header>
+
+          {/* Cover Image */}
+          {post.coverId && (
+            <div className="relative w-full h-96 mb-12 rounded-xl overflow-hidden">
+              <Image
+                src={getCloudinaryUrl(post.coverId, { width: 1200, height: 600 })}
+                alt={content.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+          )}
+
+          {/* Content */}
+          <div className="prose prose-lg max-w-none mb-12">
+            <div className="whitespace-pre-wrap text-gray-700 leading-relaxed">
+              {content.body}
+            </div>
+          </div>
+
+          {/* Gallery */}
+          {post.gallery.length > 0 && (
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+              {post.gallery.map((imageId, index) => (
+                <div
+                  key={index}
+                  className="relative h-48 rounded-lg overflow-hidden"
+                >
+                  <Image
+                    src={getCloudinaryUrl(imageId, { width: 400, height: 300 })}
+                    alt={`Gallery image ${index + 1}`}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </Container>
     </article>
   );
 }
-

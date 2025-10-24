@@ -1,30 +1,32 @@
-"use client";
-import {useTranslations} from 'next-intl';
-import Link from 'next/link';
-import {useLocale} from 'next-intl';
+import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Button } from "./ui/Button";
+import { Container } from "./ui/Container";
 
-export default function Hero() {
-  const t = useTranslations('hero');
-  const locale = useLocale();
+export async function Hero() {
+  const t = await getTranslations();
+
   return (
-    <section className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-beige to-white p-8 shadow-soft md:p-12">
-      <div className="relative z-10 max-w-2xl">
-        <h1 className="text-3xl font-bold tracking-tight md:text-5xl">{t('title')}</h1>
-        <p className="mt-4 text-lg text-slate-700">{t('subtitle')}</p>
-        <div className="mt-6 flex items-center gap-4">
-          <Link
-            href={`/${locale}/donate`}
-            className="rounded-md bg-brand px-5 py-3 text-white shadow hover:bg-brand-dark"
-          >
-            {t('cta')}
+    <section className="relative bg-gradient-to-br from-brand/5 via-beige to-brand/10 overflow-hidden">
+      <Container>
+        <div className="py-20 md:py-32 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            {t("hero.title")}
+          </h1>
+          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            {t("hero.subtitle")}
+          </p>
+          <Link href="/donate">
+            <Button size="lg" className="shadow-lg">
+              {t("hero.cta")}
+            </Button>
           </Link>
-          {/* MobilePay number pill placeholder */}
-          <span className="rounded-full bg-white/80 px-3 py-1 text-sm ring-1 ring-slate-200">
-            MobilePay: <span className="font-mono">{process.env.NEXT_PUBLIC_MOBILEPAY_BOX || 'XXXXXX'}</span>
-          </span>
         </div>
-      </div>
-      <div className="pointer-events-none absolute inset-0 -z-0 bg-[radial-gradient(1000px_400px_at_80%_-20%,rgba(14,116,144,0.10),transparent)]" />
+      </Container>
+
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-brand/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
     </section>
   );
 }

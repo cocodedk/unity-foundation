@@ -1,11 +1,25 @@
-import {useTranslations} from 'next-intl';
+import { getTranslations } from "next-intl/server";
+import { Container } from "@/components/ui/Container";
+import { Card, CardContent } from "@/components/ui/Card";
 
-export default function ImpressumPage() {
-  const t = useTranslations('legal');
+export default async function ImpressumPage() {
+  const t = await getTranslations();
+
   return (
-    <div className="prose">
-      <h1>{t('impressum')}</h1>
-      <p>{t('comingSoon')}</p>
+    <div className="py-16 md:py-24">
+      <Container>
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center">
+          {t("legal.impressum")}
+        </h1>
+
+        <div className="max-w-3xl mx-auto">
+          <Card>
+            <CardContent className="p-8">
+              <p className="text-gray-600">{t("legal.comingSoon")}</p>
+            </CardContent>
+          </Card>
+        </div>
+      </Container>
     </div>
   );
 }

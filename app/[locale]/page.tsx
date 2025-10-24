@@ -1,14 +1,13 @@
-import Hero from '@/components/Hero';
-import ProgramCards from '@/components/ProgramCards';
-import UpdatesPreview from '@/components/UpdatesPreview';
+import { Hero } from "@/components/Hero";
+import { ProgramCards } from "@/components/ProgramCards";
+import { UpdatesPreview } from "@/components/UpdatesPreview";
 
-export default function HomePage() {
+export default function HomePage({ params }: { params: { locale: string } }) {
   return (
-    <div className="space-y-16">
+    <>
       <Hero />
       <ProgramCards />
-      <UpdatesPreview />
-    </div>
+      <UpdatesPreview locale={params.locale} />
+    </>
   );
 }
-

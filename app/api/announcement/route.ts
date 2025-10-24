@@ -1,16 +1,46 @@
-import {NextResponse} from 'next/server';
+import { NextRequest, NextResponse } from "next/server";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
+import { prisma } from "@/lib/prisma";
 
 export async function GET() {
-  // Placeholder returning disabled banner; values would be loaded from DB in v1
-  return NextResponse.json({
-    enabled: false,
-    mobilePay: process.env.NEXT_PUBLIC_MOBILEPAY_BOX || '',
-    bannerText: ''
+  const announcement = await prisma.announcement.findUnique({
+    where: { id: 1 },
+    include: { i18n: true }
   });
+
+  return NextResponse.json(announcement);
 }
 
-export async function PUT(req: Request) {
-  // TODO: Auth + persist to DB; for now, reject
-  return new NextResponse('Not implemented', {status: 501});
-}
+export async function PUT(request: NextRequest) {
+  const session = await getServerSession(authOptions);
 
+  if (!session || !["ADMIN", "EDITOR"].includes(session.user.role)) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  const body = await request.json();
+  const { mobilePay, enabled, i18n } = body;
+
+  const announcement = await prisma.announcement.upsert({
+    where: { id: 1 },
+    create: {
+      mobilePay,
+      enabled,
+      i18n: {
+        create: i18n
+      }
+    },
+    update: {
+      mobilePay,
+      enabled,
+      i18n: {
+        deleteMany: {},
+        create: i18n
+      }
+    },
+    include: { i18n: true }
+  });
+
+  return NextResponse.json(announcement);
+}

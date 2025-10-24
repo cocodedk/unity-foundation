@@ -1,7 +1,28 @@
-import {NextResponse} from 'next/server';
+import { NextRequest, NextResponse } from "next/server";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
+import { prisma } from "@/lib/prisma";
 
-export async function PATCH(_: Request, {params}: {params: {id: string}}) {
-  // Placeholder toggle
-  return NextResponse.json({id: params.id, published: true});
+export async function PATCH(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  const session = await getServerSession(authOptions);
+
+  if (!session || !["ADMIN", "EDITOR"].includes(session.user.role)) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  const body = await request.json();
+  const { publish } = body;
+
+  const post = await prisma.post.update({
+    where: { id: params.id },
+    data: {
+      status: publish ? "PUBLISHED" : "DRAFT",
+      publishedAt: publish ? new Date() : null
+    }
+  });
+
+  return NextResponse.json(post);
 }
-
