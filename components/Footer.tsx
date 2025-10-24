@@ -43,7 +43,7 @@ export async function Footer() {
                 {links.map((link) => (
                   <li key={link.href}>
                     <Link
-                      href={link.href}
+                      href={link.href as any}
                       className="text-gray-600 hover:text-brand transition-colors text-sm"
                     >
                       {link.label}
@@ -91,8 +91,8 @@ export async function Footer() {
                 {legalLinks.map((link) => (
                   <Link
                     key={link.href}
-                    href={link.href}
-                    className="text-sm text-gray-500 hover:text-brand transition-colors"
+                    href={link.href as any}
+                    className="text-sm text-gray-600 hover:text-brand transition-colors"
                   >
                     {link.label}
                   </Link>

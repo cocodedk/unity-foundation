@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 import { LangSwitcher } from "./LangSwitcher";
 import { Container } from "./ui/Container";
 import { cn } from "@/lib/utils";
+import { Route } from "next";
 
 export function Header() {
   const t = useTranslations();
@@ -26,7 +27,7 @@ export function Header() {
       <Container>
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/">
             <span className="text-xl md:text-2xl font-bold text-brand">
               {t("siteName")}
             </span>
@@ -37,7 +38,7 @@ export function Header() {
             {navItems.map((item) => (
               <Link
                 key={item.href}
-                href={item.href}
+                href={item.href as any}
                 className="text-gray-700 hover:text-brand transition-colors"
               >
                 {item.label}
@@ -71,7 +72,7 @@ export function Header() {
             {navItems.map((item) => (
               <Link
                 key={item.href}
-                href={item.href}
+                href={item.href as any}
                 className="text-gray-700 hover:text-brand transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
