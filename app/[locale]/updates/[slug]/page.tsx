@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { setRequestLocale } from "next-intl/server";
 import { prisma } from "@/lib/prisma";
 import { Container } from "@/components/ui/Container";
 import { formatDate } from "@/lib/utils";
@@ -8,13 +9,16 @@ import { getCloudinaryUrl } from "@/lib/cloudinary";
 export default async function UpdatePage({
   params
 }: {
-  params: { locale: string; slug: string };
+  params: Promise<{ locale: string; slug: string }>;
 }) {
+  const { locale, slug } = await params;
+  setRequestLocale(locale);
+
   const post = await prisma.post.findUnique({
-    where: { slug: params.slug, status: "PUBLISHED" },
+    where: { slug, status: "PUBLISHED" },
     include: {
       i18n: {
-        where: { locale: params.locale }
+        where: { locale }
       },
       author: {
         select: { name: true, email: true }
@@ -38,7 +42,7 @@ export default async function UpdatePage({
               {content.title}
             </h1>
             <div className="text-gray-600">
-              {formatDate(post.publishedAt!, params.locale)}
+              {formatDate(post.publishedAt!, locale)}
             </div>
           </header>
 

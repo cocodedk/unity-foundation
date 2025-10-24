@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Heart, Accessibility, HandHeart } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Card, CardContent, CardHeader } from "@/components/ui/Card";
@@ -9,7 +9,9 @@ const programs = [
   { key: "poverty", icon: HandHeart, color: "text-emerald-500" }
 ];
 
-export default async function ProgramsPage() {
+export default async function ProgramsPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations();
 
   return (

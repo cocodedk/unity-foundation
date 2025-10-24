@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { prisma } from "@/lib/prisma";
 import { Container } from "@/components/ui/Container";
 import { Card, CardContent } from "@/components/ui/Card";
@@ -10,15 +10,17 @@ import { getCloudinaryUrl } from "@/lib/cloudinary";
 export default async function UpdatesPage({
   params
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations();
 
   const posts = await prisma.post.findMany({
     where: { status: "PUBLISHED" },
     include: {
       i18n: {
-        where: { locale: params.locale }
+        where: { locale }
       }
     },
     orderBy: { publishedAt: "desc" }
@@ -57,7 +59,7 @@ export default async function UpdatesPage({
                     )}
                     <CardContent className="p-6">
                       <div className="text-sm text-gray-500 mb-2">
-                        {formatDate(post.publishedAt!, params.locale)}
+                        {formatDate(post.publishedAt!, locale)}
                       </div>
                       <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2">
                         {content.title}
