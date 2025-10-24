@@ -1,9 +1,11 @@
+"use client";
 import Link from 'next/link';
 import Image from 'next/image';
 import {useTranslations, useLocale} from 'next-intl';
 
-export default async function UpdatesPreview() {
+export default function UpdatesPreview() {
   const t = useTranslations('updates');
+  const ui = useTranslations('ui');
   const locale = useLocale();
   // Placeholder: would fetch latest posts for locale
   const posts: Array<{slug: string; title: string; date: string; cover?: string}> = [];
@@ -12,11 +14,11 @@ export default async function UpdatesPreview() {
       <div className="mb-6 flex items-center justify-between">
         <h2 className="text-2xl font-semibold">{t('title')}</h2>
         <Link href={`/${locale}/updates`} className="text-brand underline">
-          View all
+          {ui('viewAll')}
         </Link>
       </div>
       {posts.length === 0 ? (
-        <div className="text-slate-600">No updates yet.</div>
+        <div className="text-slate-600">{ui('noPosts')}</div>
       ) : (
         <div className="grid gap-6 md:grid-cols-3">
           {posts.map((p) => (
@@ -37,4 +39,3 @@ export default async function UpdatesPreview() {
     </section>
   );
 }
-

@@ -32,7 +32,59 @@
   "footer": {
     "blurb": "Unity Foundation is a non-governmental, non-political, grassroots charity.",
     "telegram": "Telegram",
-    "allRights": "All rights reserved"
+    "allRights": "All rights reserved",
+    "links": "Links",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "About",
+    "intro": "Unity Foundation is a non-governmental, non-political, grassroots charity. We support children, people with disabilities, and people experiencing poverty.",
+    "founderTitle": "Founder",
+    "founderName": "Mandana Zaboli",
+    "adminTitle": "Administration",
+    "adminText": "cocode.dk / Babak Bandpey"
+  },
+  "ui": {
+    "viewAll": "View all",
+    "noPosts": "No posts yet.",
+    "qr": "QR",
+    "comingSoon": "Coming soon."
+  },
+  "legal": {
+    "privacy": "Privacy Policy",
+    "cookies": "Cookies",
+    "impressum": "Impressum",
+    "comingSoon": "Content coming soon."
+  },
+  "getInvolved": {
+    "title": "Get Involved",
+    "intro": "Volunteer, partner, or support in-kind. Coming soon."
+  },
+  "contact": {
+    "title": "Contact",
+    "emailBlurb": "For general inquiries, please email",
+    "telegram": "Telegram",
+    "comingSoon": "Contact form will be available soon."
+  },
+  "banner": {
+    "prefix": "Donate via MobilePay:"
+  },
+  "programs": {
+    "title": "What We Do",
+    "children": "Children",
+    "disability": "Disability",
+    "poverty": "Poverty Relief",
+    "desc": {
+      "children": "Education, nutrition, and safety.",
+      "disability": "Accessibility, inclusion, and support.",
+      "poverty": "Relief, livelihood, and dignity."
+    }
+  },
+  "donate": {
+    "title": "Donate",
+    "mobilePay": "MobilePay Box",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "impactBlurb": "Donations support children, people with disabilities, and people experiencing poverty. Thank you for your generosity."
   }
 }
-

@@ -1,3 +1,4 @@
+"use client";
 import {useTranslations} from 'next-intl';
 import Link from 'next/link';
 import {useLocale} from 'next-intl';
@@ -27,4 +28,3 @@ export default function Hero() {
     </section>
   );
 }
-

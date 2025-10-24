@@ -30,15 +30,11 @@ export default function DonatePage() {
           </button>
           {/* QR placeholder; admin-managed in v1 */}
           <div className="h-24 w-24 rounded-md bg-white ring-1 ring-slate-200 grid place-content-center text-xs text-slate-500">
-            QR
+            {useTranslations('ui')('qr')}
           </div>
         </div>
       </div>
-      <p className="text-slate-700">
-        Donations support children, people with disabilities, and people experiencing
-        poverty. Thank you for your generosity.
-      </p>
+      <p className="text-slate-700">{t('impactBlurb')}</p>
     </div>
   );
 }
-

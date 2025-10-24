@@ -1,9 +1,11 @@
+import {useTranslations} from 'next-intl';
+
 export default function GetInvolvedPage() {
+  const t = useTranslations('getInvolved');
   return (
     <div className="prose">
-      <h1>Get Involved</h1>
-      <p>Volunteer, partner, or support in-kind. Coming soon.</p>
+      <h1>{t('title')}</h1>
+      <p>{t('intro')}</p>
     </div>
   );
 }
-

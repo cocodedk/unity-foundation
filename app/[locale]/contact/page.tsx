@@ -1,13 +1,19 @@
+import {useTranslations} from 'next-intl';
+
 export default function ContactPage() {
+  const t = useTranslations('contact');
+  const email = process.env.CONTACT_EMAIL || 'contact@example.com';
+  const telegram = process.env.TELEGRAM_URL || '#';
   return (
     <div className="prose">
-      <h1>Contact</h1>
+      <h1>{t('title')}</h1>
       <p>
-        For general inquiries, please email <a href="mailto:contact@example.com">contact@example.com</a>.
+        {t('emailBlurb')} <a href={`mailto:${email}`}>{email}</a>.
       </p>
-      <p>Telegram: <a href="#">t.me/unityfoundation</a></p>
-      <p>Contact form will be available soon.</p>
+      <p>
+        {t('telegram')}: <a href={telegram}>{telegram}</a>
+      </p>
+      <p>{t('comingSoon')}</p>
     </div>
   );
 }
-

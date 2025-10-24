@@ -1,3 +1,4 @@
+"use client";
 import {useTranslations} from 'next-intl';
 
 const Card = ({title, desc}: {title: string; desc: string}) => (
@@ -13,11 +14,10 @@ export default function ProgramCards() {
     <section>
       <h2 className="mb-6 text-2xl font-semibold">{t('title')}</h2>
       <div className="grid gap-6 md:grid-cols-3">
-        <Card title={t('children')} desc="Education, nutrition, and safety." />
-        <Card title={t('disability')} desc="Accessibility, inclusion, and support." />
-        <Card title={t('poverty')} desc="Relief, livelihood, and dignity." />
+        <Card title={t('children')} desc={t('desc.children')} />
+        <Card title={t('disability')} desc={t('desc.disability')} />
+        <Card title={t('poverty')} desc={t('desc.poverty')} />
       </div>
     </section>
   );
 }
-

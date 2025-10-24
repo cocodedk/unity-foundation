@@ -1,20 +1,15 @@
 import {useTranslations} from 'next-intl';
 
 export default function AboutPage() {
-  const t = useTranslations('footer');
+  const t = useTranslations('about');
   return (
     <div className="prose">
-      <h1>About</h1>
-      <p>
-        Unity Foundation is a non-governmental, non-political, grassroots charity. We
-        support children, people with disabilities, and people experiencing poverty.
-      </p>
-      <h2>Founder</h2>
-      <p>Mandana Zaboli</p>
-      <h2>Administration</h2>
-      <p>cocode.dk / Babak Bandpey</p>
-      <blockquote>{t('blurb')}</blockquote>
+      <h1>{t('title')}</h1>
+      <p>{t('intro')}</p>
+      <h2>{t('founderTitle')}</h2>
+      <p>{t('founderName')}</p>
+      <h2>{t('adminTitle')}</h2>
+      <p>{t('adminText')}</p>
     </div>
   );
 }
-

@@ -1,9 +1,11 @@
+import {useTranslations} from 'next-intl';
+
 export default function PrivacyPage() {
+  const t = useTranslations('legal');
   return (
     <div className="prose">
-      <h1>Privacy Policy</h1>
-      <p>Privacy policy content coming soon.</p>
+      <h1>{t('privacy')}</h1>
+      <p>{t('comingSoon')}</p>
     </div>
   );
 }
-

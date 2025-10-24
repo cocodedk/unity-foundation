@@ -32,7 +32,59 @@
   "footer": {
     "blurb": "Unity Foundation er en ikke-statslig, ikke-politisk, græsrodsorganisation.",
     "telegram": "Telegram",
-    "allRights": "Alle rettigheder forbeholdes"
+    "allRights": "Alle rettigheder forbeholdes",
+    "links": "Links",
+    "contact": "Kontakt"
+  },
+  "about": {
+    "title": "Om os",
+    "intro": "Unity Foundation er en ikke-statslig, ikke-politisk, græsrodsorganisation. Vi støtter børn, mennesker med handicap og mennesker i fattigdom.",
+    "founderTitle": "Stifter",
+    "founderName": "Mandana Zaboli",
+    "adminTitle": "Administration",
+    "adminText": "cocode.dk / Babak Bandpey"
+  },
+  "ui": {
+    "viewAll": "Se alle",
+    "noPosts": "Ingen opslag endnu.",
+    "qr": "QR",
+    "comingSoon": "Kommer snart."
+  },
+  "legal": {
+    "privacy": "Privatlivspolitik",
+    "cookies": "Cookies",
+    "impressum": "Impressum",
+    "comingSoon": "Indhold kommer snart."
+  },
+  "getInvolved": {
+    "title": "Vær med",
+    "intro": "Bliv frivillig, partner eller støt i naturalier. Kommer snart."
+  },
+  "contact": {
+    "title": "Kontakt",
+    "emailBlurb": "For generelle henvendelser, skriv til",
+    "telegram": "Telegram",
+    "comingSoon": "Kontaktformularen kommer snart."
+  },
+  "banner": {
+    "prefix": "Donér via MobilePay:"
+  },
+  "programs": {
+    "title": "Hvad vi gør",
+    "children": "Børn",
+    "disability": "Handicap",
+    "poverty": "Fattigdomsbekæmpelse",
+    "desc": {
+      "children": "Uddannelse, ernæring og tryghed.",
+      "disability": "Tilgængelighed, inklusion og støtte.",
+      "poverty": "Hjælp, levebrød og værdighed."
+    }
+  },
+  "donate": {
+    "title": "Donér",
+    "mobilePay": "MobilePay Box",
+    "copy": "Kopiér",
+    "copied": "Kopieret!",
+    "impactBlurb": "Donationer støtter børn, mennesker med handicap og mennesker i fattigdom. Tak for din gavmildhed."
   }
 }
-
