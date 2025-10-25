@@ -16,10 +16,10 @@ export async function UpdatesPreview({ locale }: { locale: string }) {
     return (
       <section className="py-16 md:py-24 bg-background-sand">
         <Container>
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-text-primary mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-growth mb-12">
             {t("updates.title")}
           </h2>
-          <p className="text-center text-text-primary">{t("ui.noPosts")}</p>
+          <p className="text-center text-wind">{t("ui.noPosts")}</p>
         </Container>
       </section>
     );
@@ -41,10 +41,10 @@ export async function UpdatesPreview({ locale }: { locale: string }) {
       return (
         <section className="py-16 md:py-24 bg-background-sand">
           <Container>
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-text-primary mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-growth mb-12">
               {t("updates.title")}
             </h2>
-            <p className="text-center text-text-primary">{t("ui.noPosts")}</p>
+            <p className="text-center text-wind">{t("ui.noPosts")}</p>
           </Container>
         </section>
       );
@@ -53,7 +53,7 @@ export async function UpdatesPreview({ locale }: { locale: string }) {
     return (
       <section className="py-16 md:py-24 bg-background-sand">
         <Container>
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-text-primary mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-growth mb-12">
             {t("updates.title")}
           </h2>
 
@@ -107,10 +107,10 @@ export async function UpdatesPreview({ locale }: { locale: string }) {
     return (
       <section className="py-16 md:py-24 bg-background-sand">
         <Container>
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-text-primary mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-growth mb-12">
             {t("updates.title")}
           </h2>
-          <p className="text-center text-text-primary">{t("ui.noPosts")}</p>
+          <p className="text-center text-wind">{t("ui.noPosts")}</p>
         </Container>
       </section>
     );

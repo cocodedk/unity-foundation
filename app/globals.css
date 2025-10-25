@@ -36,7 +36,7 @@ html[dir='rtl'] * {
 
 body {
   color: var(--fg);
-  background: var(--bg);
+  background: #BAEDF8;
   font-family: var(--font-sans);
   font-size: var(--font-size-body);
   line-height: var(--line-height-normal);

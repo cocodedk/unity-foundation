@@ -15,13 +15,13 @@ export function DonationBannerInner({
   const t = useTranslations();
 
   return (
-    <div className="bg-accent/10 border-b border-accent/20 py-3">
+    <div className="bg-coral/10 border-b border-coral/20 py-3">
       <Container>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-sm md:text-base">
-          <span className="text-text-primary">
+          <span className="text-wind">
             {text || t("banner.prefix")}
           </span>
-          <span className="font-bold text-white bg-accent px-4 py-1 rounded-full">
+          <span className="font-bold text-seedwhite bg-coral px-4 py-1 rounded-full">
             {mobilePayNumber}
           </span>
         </div>

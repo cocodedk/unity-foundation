@@ -21,22 +21,22 @@ export default function DonatePage() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-background-light">
+    <section className="py-16 md:py-24 bg-seedwhite">
       <Container>
-        <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-8 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold text-growth mb-8 text-center">
           {t("donate.title")}
         </h1>
 
         <div className="max-w-2xl mx-auto space-y-8">
-          <Card className="border-2 border-primary">
+          <Card className="border-2 border-growth">
             <CardHeader>
-              <h2 className="text-2xl font-bold text-center text-primary">
+              <h2 className="text-2xl font-bold text-center text-growth">
                 {t("donate.mobilePay")}
               </h2>
             </CardHeader>
             <CardContent className="text-center">
-              <div className="bg-background-sand rounded-lg p-6 mb-6">
-                <div className="text-4xl font-bold text-primary mb-4">
+              <div className="bg-fluff rounded-lg p-6 mb-6">
+                <div className="text-4xl font-bold text-growth mb-4">
                   {mobilePayNumber}
                 </div>
                 <Button
@@ -60,15 +60,15 @@ export default function DonatePage() {
               </div>
 
               {/* QR Code placeholder */}
-              <div className="w-48 h-48 mx-auto bg-background-sand rounded-lg flex items-center justify-center">
-                <span className="text-text-primary/50">{t("ui.qr")}</span>
+              <div className="w-48 h-48 mx-auto bg-fluff rounded-lg flex items-center justify-center">
+                <span className="text-wind/50">{t("ui.qr")}</span>
               </div>
             </CardContent>
           </Card>
 
           <Card>
             <CardContent className="p-8">
-              <p className="text-lg text-text-primary leading-relaxed text-center">
+              <p className="text-lg text-wind leading-relaxed text-center">
                 {t("donate.impactBlurb")}
               </p>
             </CardContent>

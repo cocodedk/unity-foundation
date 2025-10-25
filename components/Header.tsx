@@ -22,68 +22,51 @@ export function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-background-light/95 backdrop-blur-sm border-b border-border">
-      <Container>
-        <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <Link href="/">
-            <span className="text-xl md:text-2xl font-bold text-primary">
-              {t("siteName")}
-            </span>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href as any}
-                className="text-text-primary hover:text-primary transition-colors"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-
-          {/* Desktop Language Switcher */}
-          <div className="hidden md:block">
-            <LangSwitcher />
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-text-primary"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        <div
-          className={cn(
-            "md:hidden overflow-hidden transition-all duration-300",
-            mobileMenuOpen ? "max-h-96 py-4" : "max-h-0"
-          )}
+    <header className="sticky top-0 z-50 bg-seedwhite/95 backdrop-blur-sm border-b border-fluff">
+      <div className="px-4 md:px-6 py-4 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-2">
+          <span className="text-xl md:text-2xl font-bold text-growth">
+            {t("siteName")}
+          </span>
+        </Link>
+        <nav className="hidden md:flex items-center gap-8">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="text-wind hover:text-growth transition-colors"
+            >
+              {item.label}
+            </Link>
+          ))}
+          <LangSwitcher />
+        </nav>
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden p-2 text-wind"
         >
-          <nav className="flex flex-col space-y-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href as any}
-                className="text-text-primary hover:text-primary transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
-            <div className="pt-4 border-t border-border">
-              <LangSwitcher />
-            </div>
-          </nav>
-        </div>
-      </Container>
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+        {mobileMenuOpen && (
+          <div className="absolute top-full left-0 right-0 bg-seedwhite border-b border-fluff">
+            <nav className="flex flex-col p-4 gap-4">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-wind hover:text-growth transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <div className="pt-4 border-t border-fluff">
+                <LangSwitcher />
+              </div>
+            </nav>
+          </div>
+        )}
+      </div>
     </header>
   );
 }

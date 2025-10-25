@@ -4,9 +4,9 @@ import { Container } from "@/components/ui/Container";
 import { Card, CardContent, CardHeader } from "@/components/ui/Card";
 
 const programs = [
-  { key: "children", icon: Heart, color: "text-primary" },
-  { key: "disability", icon: Accessibility, color: "text-primary" },
-  { key: "poverty", icon: HandHeart, color: "text-primary" }
+  { key: "children", icon: Heart, color: "text-growth" },
+  { key: "disability", icon: Accessibility, color: "text-growth" },
+  { key: "poverty", icon: HandHeart, color: "text-growth" }
 ];
 
 export default async function ProgramsPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -16,9 +16,9 @@ export default async function ProgramsPage({ params }: { params: Promise<{ local
 
   return (
     <div>
-      <section className="py-16 md:py-24 bg-background-light">
+      <section className="py-16 md:py-24 bg-seedwhite">
         <Container>
-          <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-12 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-growth mb-12 text-center">
             {t("programs.title")}
           </h1>
 
@@ -26,19 +26,19 @@ export default async function ProgramsPage({ params }: { params: Promise<{ local
             {programs.map((program) => {
               const Icon = program.icon;
               return (
-                <Card key={program.key} className="text-center bg-background-light hover:shadow-xl transition-all duration-300">
+                <Card key={program.key} className="text-center bg-seedwhite hover:shadow-xl transition-all duration-300">
                   <CardHeader>
                     <div className="flex justify-center mb-4">
-                      <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
+                      <div className="w-20 h-20 rounded-full bg-growth/10 flex items-center justify-center">
                         <Icon className={`w-10 h-10 ${program.color}`} />
                       </div>
                     </div>
-                    <h2 className="text-2xl font-bold text-text-primary">
+                    <h2 className="text-2xl font-bold text-growth">
                       {t(`programs.${program.key}`)}
                     </h2>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-text-primary text-lg">
+                    <p className="text-wind text-lg">
                       {t(`programs.desc.${program.key}`)}
                     </p>
                   </CardContent>

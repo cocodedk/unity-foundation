@@ -12,20 +12,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          DEFAULT: '#4FA8A8',
-          hover: '#E88C7A'
-        },
-        text: {
-          primary: '#33373A',
-          light: '#F8F7F3'
-        },
-        background: {
-          light: '#F8F7F3',
-          sand: '#D4C8B5'
-        },
-        accent: '#E88C7A',
-        border: '#D4C8B5'
+        skyhope: '#5EC4E4',      // primary
+        seedwhite: '#F8F9F9',    // surfaces
+        fluff: '#E3E7E9',        // subtle lines/shadows
+        stem: '#BBA37A',         // warm accent
+        growth: '#3A6E6E',       // headings / primary actions
+        wind: '#8E6E4B',         // body text
+        coral: '#E88C7A',        // CTA / hover
       },
       fontSize: {
         h1: ['48px', { lineHeight: '1.2', fontWeight: '700' }],
