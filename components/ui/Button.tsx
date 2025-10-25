@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, forwardRef } from "react";
+import { ButtonHTMLAttributes, forwardRef, ReactNode } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
@@ -27,16 +27,24 @@ const buttonVariants = cva(
 
 export interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {}
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
+  children?: ReactNode;
+}
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, ...props }, ref) => {
+export const Button = forwardRef<HTMLElement, ButtonProps>(
+  ({ className, variant, size, asChild, children, ...props }, ref) => {
+    const Comp = asChild ? "a" : "button";
+
     return (
-      <button
+      <Comp
         className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
-        {...props}
-      />
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        ref={ref as any}
+        {...(props as ButtonHTMLAttributes<HTMLElement>)}
+      >
+        {children}
+      </Comp>
     );
   }
 );

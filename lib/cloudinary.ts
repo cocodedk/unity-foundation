@@ -32,7 +32,7 @@ export function getCloudinaryUrl(
 /**
  * Sign Cloudinary upload request
  */
-export function signUpload(params: Record<string, any>) {
+export function signUpload(params: Record<string, unknown>) {
   return cloudinary.utils.api_sign_request(
     params,
     process.env.CLOUDINARY_API_SECRET!

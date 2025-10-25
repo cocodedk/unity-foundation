@@ -9,7 +9,7 @@ export async function GET(request: NextRequest) {
   const locale = searchParams.get("locale") || "en";
   const status = searchParams.get("status");
 
-  const where: any = {};
+  const where: Record<string, string | boolean> = {};
   if (status) {
     where.status = status;
   }

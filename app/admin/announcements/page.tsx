@@ -26,9 +26,9 @@ export default function AdminAnnouncementsPage() {
         setMobilePay(data.mobilePay || "");
         setEnabled(data.enabled || false);
 
-        const enText = data.i18n?.find((i: any) => i.locale === "en");
-        const daText = data.i18n?.find((i: any) => i.locale === "da");
-        const faText = data.i18n?.find((i: any) => i.locale === "fa");
+        const enText = data.i18n?.find((i: Record<string, unknown>) => i.locale === "en");
+        const daText = data.i18n?.find((i: Record<string, unknown>) => i.locale === "da");
+        const faText = data.i18n?.find((i: Record<string, unknown>) => i.locale === "fa");
 
         setBannerTextEn(enText?.bannerText || "");
         setBannerTextDa(daText?.bannerText || "");

@@ -63,7 +63,7 @@ export async function UpdatesPreview({ locale }: { locale: string }) {
               if (!content) return null;
 
               return (
-                <Link key={post.id} href={`/updates/${post.slug}` as any}>
+                <Link key={post.id} href={`/updates/${post.slug}`}>
                   <Card className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                     {post.coverId && (
                       <div className="relative h-48 w-full bg-background-light">
