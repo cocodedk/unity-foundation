@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- White background -->
+  <rect width="64" height="64" fill="#FFFFFF"/>
+
+  <!-- Center seed head -->
+  <circle cx="32" cy="32" r="6" fill="#2D5038"/>
+
+  <!-- Seed parachutes - larger and simpler -->
+  <g stroke="#2D5038" stroke-width="2.5" fill="none">
+    <!-- Top -->
+    <line x1="32" y1="32" x2="32" y2="8" stroke-linecap="round"/>
+    <circle cx="32" cy="8" r="2.5" fill="#2D5038"/>
+
+    <!-- Top-right -->
+    <line x1="32" y1="32" x2="49" y2="15" stroke-linecap="round"/>
+    <circle cx="49" cy="15" r="2.5" fill="#2D5038"/>
+
+    <!-- Right -->
+    <line x1="32" y1="32" x2="56" y2="32" stroke-linecap="round"/>
+    <circle cx="56" cy="32" r="2.5" fill="#2D5038"/>
+
+    <!-- Bottom-right -->
+    <line x1="32" y1="32" x2="49" y2="49" stroke-linecap="round"/>
+    <circle cx="49" cy="49" r="2.5" fill="#2D5038"/>
+
+    <!-- Bottom -->
+    <line x1="32" y1="32" x2="32" y2="56" stroke-linecap="round"/>
+    <circle cx="32" cy="56" r="2.5" fill="#2D5038"/>
+
+    <!-- Bottom-left -->
+    <line x1="32" y1="32" x2="15" y2="49" stroke-linecap="round"/>
+    <circle cx="15" cy="49" r="2.5" fill="#2D5038"/>
+
+    <!-- Left -->
+    <line x1="32" y1="32" x2="8" y2="32" stroke-linecap="round"/>
+    <circle cx="8" cy="32" r="2.5" fill="#2D5038"/>
+
+    <!-- Top-left -->
+    <line x1="32" y1="32" x2="15" y2="15" stroke-linecap="round"/>
+    <circle cx="15" cy="15" r="2.5" fill="#2D5038"/>
+  </g>
+</svg>
