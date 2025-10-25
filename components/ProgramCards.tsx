@@ -1,22 +1,32 @@
 import { getTranslations } from "next-intl/server";
-import { Heart, Accessibility, HandHeart } from "lucide-react";
+import { UtensilsCrossed, Stethoscope, GraduationCap, Scissors, Heart } from "lucide-react";
 import { Card, CardContent } from "./ui/Card";
 import { Container } from "./ui/Container";
 
 const programs = [
   {
+    key: "food",
+    icon: UtensilsCrossed,
+    color: "text-growth"
+  },
+  {
+    key: "medical",
+    icon: Stethoscope,
+    color: "text-growth"
+  },
+  {
     key: "children",
+    icon: GraduationCap,
+    color: "text-growth"
+  },
+  {
+    key: "vocational",
+    icon: Scissors,
+    color: "text-growth"
+  },
+  {
+    key: "empowerment",
     icon: Heart,
-    color: "text-growth"
-  },
-  {
-    key: "disability",
-    icon: Accessibility,
-    color: "text-growth"
-  },
-  {
-    key: "poverty",
-    icon: HandHeart,
     color: "text-growth"
   }
 ];
@@ -31,7 +41,7 @@ export async function ProgramCards() {
           {t("programs.title")}
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {programs.map((program) => {
             const Icon = program.icon;
             return (

@@ -27,8 +27,16 @@
     "contact": "Kontakt os"
   },
   "about": {
-    "title": "Hvordan vi hjælper",
-    "intro": "Unity Foundation er en uafhængig, græsrodsorganisation. Vi støtter børn, mennesker med handicap og familier i fattigdom gennem direkte bistand, uddannelse og samfundsprogrammer.",
+    "title": "Om Unity Foundation",
+    "intro": "De nuværende økonomiske udfordringer i Iran minder os om, at medfølelse ikke er et valg – det er en pligt fra hjertet. Hos Unity Foundation handler vi, fordi vi ikke kan vende blikket væk. Hvert måltid, hver medicin, hver bog eller blyant, vi deler, bærer et stille budskab: du er ikke alene.",
+    "mission": "Vi tror, at den største gave i livet er evnen til at hjælpe andre. Når vi rækker ud – for at mætte, undervise eller helbrede – finder vi styrke og mening i os selv. At hjælpe andre giver os mod, håb og en følelse af fællesskab.",
+    "goal": "Vores mission er enkel, men dybtfølt: at lindre lidelse, genskabe værdighed og minde mennesker om, at godhed stadig findes.",
+    "location": "Vi har base i Danmark, hvor vi samler støtte og hjælp fra mennesker, der deler vores tro på, at når vi giver og deler, bliver vi alle rigere – ikke i penge, men i ånd.",
+    "closing": "Når vi tager os af andre, finder vi mening. Når vi deler, bliver vi hele.",
+    "whereWeWork": "Hvor vi arbejder",
+    "whereIntro": "Vores rødder ligger i Shiraz, en by kendt for sin kultur, poesi og gæstfrihed – men også et sted, hvor mange familier kæmper i stilhed med økonomiske vanskeligheder. Her støtter Unity Foundation gennem et tæt netværk af lokale frivillige børn, familier og mennesker med handicap, som ellers ofte bliver overset.",
+    "whereExpansion": "Fra Shiraz har vores arbejde nået fjerntliggende landsbyer i Sistan og Baluchestan, nogle af de mest udsatte områder i Iran. Her er fattigdommen dyb, og adgangen til uddannelse og sundhed begrænset – men menneskernes styrke og håb er uovertruffen. Vi bringer mad, medicin og skolematerialer, hvor selv små ting kan skabe store forandringer.",
+    "whereGoal": "Vores mål er ikke blot at levere hjælp, men at skabe tillid og forbindelse – at minde hvert menneske om, at de er en del af et større fællesskab af omsorg. Unity Foundation bygger en bro mellem Danmark og Iran – fra hjerte til hjerte, fra hånd til hånd.",
     "founderTitle": "Stifter",
     "founderName": "Mandana Zaboli",
     "adminTitle": "Administration",
@@ -60,15 +68,28 @@
     "prefix": "Støt os via MobilePay:"
   },
   "programs": {
-    "title": "Hvordan vi hjælper",
-    "children": "Børn",
-    "disability": "Handicap",
-    "poverty": "Fattigdomsbekæmpelse",
+    "title": "Vores arbejde",
+    "intro": "Hos Unity Foundation er vores arbejde enkelt – vi hjælper mennesker med at leve med værdighed og håb. Bag hver donation findes en menneskelig historie: en mor, der passer sit handicappede barn, et barn, der mangler skoleudstyr, eller en ældre person uden familie.",
+    "mission": "Vi yder direkte hjælp gennem vores lokale frivillige i Shiraz og i afsides landsbyer i Sistan og Baluchestan. Vores mål er ikke kun at levere støtte, men at skabe tillid, håb og styrke i de hjem, vi når.",
+    "whatWeDo": "Hvad vi gør",
+    "closing": "Vi arbejder stille, ærligt og gennemsigtigt. Hver gave – uanset om det er brød, medicin eller en symaskine – bærer det samme budskab: Du er set. Du betyder noget. Du er ikke glemt.",
+    "food": "Mad og basale behov",
+    "medical": "Medicinsk støtte",
+    "children": "Børn og uddannelse",
+    "vocational": "Erhvervsuddannelse",
+    "empowerment": "Styrkelse og fællesskab",
     "desc": {
-      "children": "Uddannelse, ernæring og sikre steder hvor børn trives.",
-      "disability": "Tilgængelighed, inklusion og den støtte der skal til for at leve med værdighed.",
-      "poverty": "Direkte bistand, leverbrødsprogrammer og veje til stabilitet."
+      "food": "Uddeling af månedlige madpakker og fornødenheder til familier i fattigdom – med fokus på værdighed og næring.",
+      "medical": "Hjælp til medicin, behandling og plejeprodukter for syge og handicappede mennesker.",
+      "children": "Udstyr og materialer til skolebørn samt støtte til læring, sport og kreative aktiviteter.",
+      "vocational": "Kurser i syning, sprog og tekniske færdigheder, især for unge og enlige mødre.",
+      "empowerment": "Vores hjælp er ikke velgørenhed – det er solidaritet. Hver handling er et udtryk for respekt og menneskelig værdi."
     }
+  },
+  "philosophy": {
+    "title": "Vores filosofi",
+    "content": "Vi ser velgørenhed ikke som en transaktion, men som en forbindelse — en kæde af venlighed mellem hjerter. Vi arbejder gennem verificerede lokale partnere og sikrer, at hver handling med at give direkte når ud til rigtige liv og skaber håndgribelig forandring. Bag hver donation er der en historie om mod — en mor, der kæmper for sit barn, en teenager, der lærer et håndværk, en handicappet person, der genvinder værdighed.",
+    "quote": "Nogle gange vil Gud nå andre gennem dine hænder. Når du løfter nogen op, bliver du selv berørt af nåde."
   },
   "donate": {
     "title": "Støt vores mission",

@@ -27,8 +27,16 @@
     "contact": "Contact Us"
   },
   "about": {
-    "title": "How We Help",
-    "intro": "Unity Foundation is an independent, grassroots charity. We support children, people with disabilities, and families experiencing poverty through direct aid, education, and community programs.",
+    "title": "About Unity Foundation",
+    "intro": "The current economic hardship in Iran reminds us that compassion is not a choice — it is a duty of the heart. At Unity Foundation, we act because we cannot turn away. Every meal shared, every medicine delivered, every notebook handed to a child carries a simple message: you are not alone.",
+    "mission": "We believe the greatest gift in life is the ability to help others. When we reach out — to feed, to teach, to heal — we discover strength and peace within ourselves. Helping others gives us courage, it restores hope, and it binds us together in humanity.",
+    "goal": "Our mission is simple yet profound: to ease suffering where we can, to restore dignity where it has been lost, and to remind every person that kindness still exists.",
+    "location": "Based in Denmark, we gather help from friends and supporters who believe, as we do, that sharing what we have makes us all richer — not in wealth, but in spirit.",
+    "closing": "When we care for others, we find meaning. When we share, we become whole.",
+    "whereWeWork": "Where We Work",
+    "whereIntro": "Our roots are in Shiraz, a city known for its culture, poetry, and kindness — and also for communities quietly struggling through economic hardship. Here, through a close network of volunteers, Unity Foundation supports families, children, and people with disabilities who are often left behind by society.",
+    "whereExpansion": "From Shiraz, our work has reached beyond the city — to remote villages in Sistan and Balouchestan, among some of the most under-served regions of Iran. In these areas, poverty is deep and access to healthcare and education is limited, but the resilience of the people is extraordinary. We bring essentials, medicine, and school materials to places where even the simplest items can change a day, a mood, a life.",
+    "whereGoal": "Our goal is not only to deliver aid, but to stay connected — to build trust and to remind every person that they belong to a larger circle of care. Through each delivery, Unity Foundation weaves a thread of compassion that connects Denmark to Iran — heart to heart, hand to hand.",
     "founderTitle": "Founder",
     "founderName": "Mandana Zaboli",
     "adminTitle": "Administration",
@@ -59,16 +67,44 @@
   "banner": {
     "prefix": "Support us via MobilePay:"
   },
-  "programs": {
-    "title": "How We Help",
-    "children": "Children",
-    "disability": "Disability",
-    "poverty": "Poverty Relief",
-    "desc": {
-      "children": "Education, nutrition, and safe spaces where children thrive.",
-      "disability": "Accessibility, inclusion, and the support needed to live with dignity.",
-      "poverty": "Direct aid, livelihood programs, and pathways to stability."
+  "homeTeasers": {
+    "title": "How your kindness helps",
+    "food": {
+      "title": "Food & Essentials",
+      "blurb": "Monthly packages that bring relief and dignity to families in hard times."
+    },
+    "health": {
+      "title": "Health & Dignity",
+      "blurb": "Medicine and care for people with disabilities and chronic illness."
+    },
+    "education": {
+      "title": "Children & Learning",
+      "blurb": "Books and school materials that open doors for young minds."
     }
+  },
+  "programs": {
+    "title": "Our Work",
+    "intro": "At Unity Foundation, our work is simple — we help people live with dignity. Behind every donation and every act of giving, there is a human story: a mother caring for a disabled child, a student who cannot afford school supplies, an elderly person who has no one left.",
+    "mission": "We provide direct, person-to-person support through trusted local volunteers in Shiraz and in remote villages of Sistan and Balouchestan. Our mission is not only to deliver aid, but to build trust, hope, and self-reliance within every home we reach.",
+    "whatWeDo": "What We Do",
+    "closing": "We work quietly, directly, and with full transparency. Every item given — from a loaf of bread to a sewing machine — carries the same message: you are seen, you are valued, you are not forgotten.",
+    "food": "Food & Basic Needs",
+    "medical": "Medical Support",
+    "children": "Children & Education",
+    "vocational": "Vocational Training",
+    "empowerment": "Empowerment & Dignity",
+    "desc": {
+      "food": "Supplying monthly food packages and essentials to families living in poverty. We focus on balanced nutrition with dignity — not just survival.",
+      "medical": "Covering the cost of medication and treatment for individuals with disabilities or chronic illness, and providing hygiene and care materials for bedridden patients.",
+      "children": "Supporting children's access to learning through school supplies, books, and participation in sports or creative classes. We believe every child deserves a chance to dream.",
+      "vocational": "Helping teenagers and women gain independence by learning skills like sewing, language, and small technical trades.",
+      "empowerment": "Our help is not charity — it is solidarity. Every act of giving aims to rebuild confidence and remind people that they matter."
+    }
+  },
+  "philosophy": {
+    "title": "Our Philosophy",
+    "content": "We see charity not as a transaction, but as a connection — a chain of kindness between hearts. We operate through verified local partners, ensuring that every act of giving directly reaches real lives and creates tangible change. Behind every donation, there is a story of courage — a mother fighting for her child, a teenager learning a trade, a disabled person reclaiming dignity.",
+    "quote": "Sometimes God wants to reach others through your hands. When you lift someone up, you are touched by grace yourself."
   },
   "donate": {
     "title": "Support Our Mission",
