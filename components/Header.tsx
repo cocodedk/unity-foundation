@@ -5,8 +5,6 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { Menu, X } from "lucide-react";
 import { LangSwitcher } from "./LangSwitcher";
-import { Container } from "./ui/Container";
-import { cn } from "@/lib/utils";
 
 export function Header() {
   const t = useTranslations();
