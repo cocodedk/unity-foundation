@@ -21,7 +21,7 @@ export async function Philosophy() {
 
               <blockquote className="border-l-4 border-growth pl-6 py-2 italic">
                 <p className="text-xl text-growth">
-                  "{t("philosophy.quote")}"
+                  &ldquo;{t("philosophy.quote")}&rdquo;
                 </p>
               </blockquote>
             </CardContent>

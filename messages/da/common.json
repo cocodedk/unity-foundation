@@ -1,4 +1,11 @@
 {
+  "_constants": {
+    "organization_name": {
+      "en": "Unity Foundation",
+      "fa": "بنیاد همبستگی",
+      "da": "Unity Foundation"
+    }
+  },
   "siteName": "Unity Foundation",
   "nav": {
     "home": "Forside",
@@ -66,6 +73,21 @@
   },
   "banner": {
     "prefix": "Støt os via MobilePay:"
+  },
+  "homeTeasers": {
+    "title": "Sådan gør din støtte en forskel",
+    "food": {
+      "title": "Mad & fornødenheder",
+      "blurb": "Månedlige pakker der giver ro og værdighed i svære tider."
+    },
+    "health": {
+      "title": "Sundhed & værdighed",
+      "blurb": "Medicin og pleje til mennesker med handicap og kronisk sygdom."
+    },
+    "education": {
+      "title": "Børn & læring",
+      "blurb": "Bøger og skolemateriel, der åbner døre for unge sind."
+    }
   },
   "programs": {
     "title": "Vores arbejde",

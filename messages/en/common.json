@@ -1,4 +1,11 @@
 {
+  "_constants": {
+    "organization_name": {
+      "en": "Unity Foundation",
+      "fa": "بنیاد همبستگی",
+      "da": "Unity Foundation"
+    }
+  },
   "siteName": "Unity Foundation",
   "nav": {
     "home": "Home",

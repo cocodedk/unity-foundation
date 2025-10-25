@@ -8,9 +8,7 @@ const withNextIntl = createNextIntlPlugin(
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  experimental: {
-    typedRoutes: false
-  },
+  typedRoutes: false,
   images: {
     remotePatterns: [
       {protocol: 'https', hostname: 'res.cloudinary.com'},

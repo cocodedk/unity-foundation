@@ -5,7 +5,7 @@ import { prisma } from "@/lib/prisma";
 
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   const session = await getServerSession(authOptions);
 
@@ -15,9 +15,10 @@ export async function PATCH(
 
   const body = await request.json();
   const { publish } = body;
+  const { id } = await params;
 
   const post = await prisma.post.update({
-    where: { id: params.id },
+    where: { id },
     data: {
       status: publish ? "PUBLISHED" : "DRAFT",
       publishedAt: publish ? new Date() : null

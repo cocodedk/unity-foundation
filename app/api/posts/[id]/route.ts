@@ -5,10 +5,11 @@ import { prisma } from "@/lib/prisma";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params;
   const post = await prisma.post.findUnique({
-    where: { id: params.id },
+    where: { id },
     include: {
       i18n: true,
       author: {
@@ -26,7 +27,7 @@ export async function GET(
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   const session = await getServerSession(authOptions);
 
@@ -36,9 +37,10 @@ export async function PUT(
 
   const body = await request.json();
   const { coverId, gallery, i18n } = body;
+  const { id } = await params;
 
   const post = await prisma.post.update({
-    where: { id: params.id },
+    where: { id },
     data: {
       coverId,
       gallery,
@@ -59,7 +61,7 @@ export async function PUT(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   const session = await getServerSession(authOptions);
 
@@ -67,8 +69,9 @@ export async function DELETE(
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
+  const { id } = await params;
   await prisma.post.delete({
-    where: { id: params.id }
+    where: { id }
   });
 
   return NextResponse.json({ success: true });
