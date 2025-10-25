@@ -6,9 +6,22 @@ import { Container } from "@/components/ui/Container";
 import { Card, CardContent } from "@/components/ui/Card";
 import { formatDate } from "@/lib/utils";
 import { getCloudinaryUrl } from "@/lib/cloudinary";
+import { generatePageMetadata } from "@/lib/metadata";
 
 // Force dynamic rendering to avoid database access during build
 export const dynamic = 'force-dynamic';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
+
+  return generatePageMetadata({
+    title: t("seo.updates.title"),
+    description: t("seo.updates.description"),
+    locale,
+    path: "/updates"
+  });
+}
 
 export default async function UpdatesPage({
   params

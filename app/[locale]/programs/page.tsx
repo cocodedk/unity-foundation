@@ -2,6 +2,19 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { UtensilsCrossed, Stethoscope, GraduationCap, Scissors, Heart } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Card, CardContent } from "@/components/ui/Card";
+import { generatePageMetadata } from "@/lib/metadata";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
+
+  return generatePageMetadata({
+    title: t("seo.programs.title"),
+    description: t("seo.programs.description"),
+    locale,
+    path: "/programs"
+  });
+}
 
 const programs = [
   { key: "food", icon: UtensilsCrossed, color: "text-growth" },

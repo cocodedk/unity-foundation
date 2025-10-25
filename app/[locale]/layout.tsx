@@ -5,6 +5,8 @@ import { locales, isRTL } from "@/i18n/config";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { DonationBanner } from "@/components/DonationBanner";
+import { OrganizationSchema } from "@/components/StructuredData";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -30,7 +32,11 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} dir={isRTL(locale) ? "rtl" : "ltr"}>
+      <head>
+        <OrganizationSchema locale={locale} />
+      </head>
       <body className="antialiased">
+        <GoogleAnalytics />
         <NextIntlClientProvider messages={messages}>
           <DonationBanner locale={locale} />
           <Header />

@@ -7,6 +7,7 @@ import { Container } from "@/components/ui/Container";
 import { Card, CardContent, CardHeader } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 
+// Note: This is a client component, metadata is handled by parent layout
 export default function DonatePage() {
   const t = useTranslations();
   const [copied, setCopied] = useState(false);

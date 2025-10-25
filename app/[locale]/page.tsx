@@ -1,8 +1,21 @@
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Hero } from "@/components/Hero";
 import { HomeTeasers } from "@/components/HomeTeasers";
 import { UpdatesPreview } from "@/components/UpdatesPreview";
 import { Philosophy } from "@/components/Philosophy";
+import { generatePageMetadata } from "@/lib/metadata";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
+
+  return generatePageMetadata({
+    title: t("seo.home.title"),
+    description: t("seo.home.description"),
+    locale,
+    path: ""
+  });
+}
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

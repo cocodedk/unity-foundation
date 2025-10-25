@@ -33,18 +33,38 @@ export function generatePageMetadata({
   return {
     title: `${title} | ${orgName}`,
     description,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1
+      }
+    },
     openGraph: {
       title,
       description,
       url,
       siteName: orgName,
       locale,
-      type: "website"
+      type: "website",
+      images: [
+        {
+          url: `${baseUrl}/${locale}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: orgName
+        }
+      ]
     },
     twitter: {
       card: "summary_large_image",
       title,
-      description
+      description,
+      images: [`${baseUrl}/${locale}/opengraph-image`]
     },
     alternates: {
       canonical: url,

@@ -122,5 +122,35 @@
     "copy": "Copy",
     "copied": "Copied!",
     "impactBlurb": "Your donation directly supports children, people with disabilities, and families in need. Together, we're building a more compassionate world. Thank you."
+  },
+  "seo": {
+    "home": {
+      "title": "Unity Foundation - Supporting vulnerable communities with dignity and compassion",
+      "description": "We support children, people with disabilities, and families in need in Iran. Direct aid, transparent work, and meaningful impact from Denmark to Shiraz and beyond."
+    },
+    "about": {
+      "title": "About Us",
+      "description": "Learn about Unity Foundation's mission to support vulnerable communities in Iran through direct, meaningful aid from our base in Denmark."
+    },
+    "programs": {
+      "title": "Our Work",
+      "description": "Discover how we provide food, medical support, education, and vocational training to families in Shiraz and Sistan and Balouchestan."
+    },
+    "updates": {
+      "title": "Updates & Stories",
+      "description": "Read the latest stories and updates from our work supporting vulnerable communities in Iran."
+    },
+    "donate": {
+      "title": "Support Us",
+      "description": "Your donation directly supports children, people with disabilities, and families in need. Donate via MobilePay and help us build a more compassionate world."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Get in touch with Unity Foundation. We're here to answer your questions and welcome your support."
+    },
+    "getInvolved": {
+      "title": "Get Involved",
+      "description": "Join our mission to support vulnerable communities. Volunteer, partner with us, or contribute to making a real difference."
+    }
   }
 }

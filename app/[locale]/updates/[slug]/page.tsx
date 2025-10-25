@@ -5,6 +5,75 @@ import { prisma } from "@/lib/prisma";
 import { Container } from "@/components/ui/Container";
 import { formatDate } from "@/lib/utils";
 import { getCloudinaryUrl } from "@/lib/cloudinary";
+import { getOrganizationName } from "@/lib/metadata";
+import { ArticleSchema } from "@/components/StructuredData";
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}) {
+  const { locale, slug } = await params;
+
+  const post = await prisma.post.findUnique({
+    where: { slug, status: "PUBLISHED" },
+    include: {
+      i18n: {
+        where: { locale }
+      }
+    }
+  });
+
+  if (!post || !post.i18n[0]) {
+    return {};
+  }
+
+  const content = post.i18n[0];
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://unityfoundation.org";
+  const url = `${baseUrl}/${locale}/updates/${slug}`;
+  const orgName = getOrganizationName(locale);
+
+  return {
+    title: `${content.title} | ${orgName}`,
+    description: content.summary || content.body.substring(0, 160),
+    openGraph: {
+      title: content.title,
+      description: content.summary || content.body.substring(0, 160),
+      url,
+      siteName: orgName,
+      locale,
+      type: "article",
+      publishedTime: post.publishedAt?.toISOString(),
+      modifiedTime: post.updatedAt.toISOString(),
+      images: post.coverId
+        ? [
+            {
+              url: getCloudinaryUrl(post.coverId, { width: 1200, height: 630 }),
+              width: 1200,
+              height: 630,
+              alt: content.title
+            }
+          ]
+        : []
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: content.title,
+      description: content.summary || content.body.substring(0, 160),
+      images: post.coverId
+        ? [getCloudinaryUrl(post.coverId, { width: 1200, height: 630 })]
+        : []
+    },
+    alternates: {
+      canonical: url,
+      languages: {
+        en: `${baseUrl}/en/updates/${slug}`,
+        da: `${baseUrl}/da/updates/${slug}`,
+        fa: `${baseUrl}/fa/updates/${slug}`
+      }
+    }
+  };
+}
 
 export default async function UpdatePage({
   params
@@ -33,8 +102,19 @@ export default async function UpdatePage({
   const content = post.i18n[0];
 
   return (
-    <article className="py-16 md:py-24 bg-seedwhite">
-      <Container>
+    <>
+      <ArticleSchema
+        title={content.title}
+        description={content.summary || content.body.substring(0, 160)}
+        publishedAt={post.publishedAt!}
+        updatedAt={post.updatedAt}
+        locale={locale}
+        slug={slug}
+        imageId={post.coverId || undefined}
+        authorName={post.author?.name || undefined}
+      />
+      <article className="py-16 md:py-24 bg-seedwhite">
+        <Container>
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <header className="mb-12">
@@ -86,5 +166,6 @@ export default async function UpdatePage({
         </div>
       </Container>
     </article>
+    </>
   );
 }

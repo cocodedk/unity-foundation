@@ -122,5 +122,35 @@
     "copy": "Kopiér",
     "copied": "Kopieret!",
     "impactBlurb": "Din donation støtter direkte børn, mennesker med handicap og familier i nød. Sammen bygger vi en mere medfølende verden. Tak skal du have."
+  },
+  "seo": {
+    "home": {
+      "title": "Unity Foundation - Støtter sårbare samfund med værdighed og medfølelse",
+      "description": "Vi støtter børn, mennesker med handicap og familier i nød i Iran. Direkte hjælp, gennemsigtigt arbejde og meningsfuld indvirkning fra Danmark til Shiraz og videre."
+    },
+    "about": {
+      "title": "Om os",
+      "description": "Lær om Unity Foundations mission om at støtte sårbare samfund i Iran gennem direkte, meningsfuld hjælp fra vores base i Danmark."
+    },
+    "programs": {
+      "title": "Vores arbejde",
+      "description": "Oplev hvordan vi leverer mad, medicinsk støtte, uddannelse og erhvervsuddannelse til familier i Shiraz og Sistan og Baluchestan."
+    },
+    "updates": {
+      "title": "Opdateringer og historier",
+      "description": "Læs de seneste historier og opdateringer fra vores arbejde med at støtte sårbare samfund i Iran."
+    },
+    "donate": {
+      "title": "Støt os",
+      "description": "Din donation støtter direkte børn, mennesker med handicap og familier i nød. Donér via MobilePay og hjælp os med at bygge en mere medfølende verden."
+    },
+    "contact": {
+      "title": "Kontakt os",
+      "description": "Kom i kontakt med Unity Foundation. Vi er her for at besvare dine spørgsmål og byde din støtte velkommen."
+    },
+    "getInvolved": {
+      "title": "Vær med",
+      "description": "Bliv en del af vores mission om at støtte sårbare samfund. Bliv frivillig, samarbejd med os, eller bidrag til at gøre en reel forskel."
+    }
   }
 }
