@@ -28,7 +28,7 @@ export async function Hero() {
             <h1 className="text-3xl md:text-6xl font-bold text-seedwhite mb-4 leading-tight drop-shadow-lg">
               {t("hero.title")}
             </h1>
-            <p className="text-lg md:text-3xl mb-6 max-w-6xl mx-auto" style={{color: '#3B9DBF', textShadow: '0 0 8px rgba(255,255,255,0.95), 0 0 16px rgba(255,255,255,0.8)'}}>
+            <p className="text-lg md:text-3xl mb-6 max-w-6xl mx-auto" style={{color: '#2B7A95', textShadow: '0 0 8px rgba(255,255,255,1), 0 0 12px rgba(255,255,255,1), 0 0 20px rgba(255,255,255,1), 0 0 30px rgba(255,255,255,0.9), 0 0 40px rgba(255,255,255,0.8)'}}>
               {t("hero.subtitle")}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
