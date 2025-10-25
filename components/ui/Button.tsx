@@ -1,4 +1,5 @@
 import { ButtonHTMLAttributes, forwardRef, ReactNode } from "react";
+import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
@@ -32,16 +33,15 @@ export interface ButtonProps
   children?: ReactNode;
 }
 
-export const Button = forwardRef<HTMLElement, ButtonProps>(
-  ({ className, variant, size, asChild, children, ...props }, ref) => {
-    const Comp = asChild ? "a" : "button";
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, asChild = false, children, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button";
 
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        ref={ref as any}
-        {...(props as ButtonHTMLAttributes<HTMLElement>)}
+        ref={ref}
+        {...props}
       >
         {children}
       </Comp>

@@ -1,11 +1,11 @@
-import { NextAuthOptions } from "next-auth";
-import CredentialsProvider from "next-auth/providers/credentials";
+import NextAuth from "next-auth";
+import Credentials from "next-auth/providers/credentials";
 import { compare } from "bcryptjs";
-import { prisma } from "./prisma";
+import { prisma } from "@/lib/prisma";
 
-export const authOptions: NextAuthOptions = {
+export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
-    CredentialsProvider({
+    Credentials({
       name: "Credentials",
       credentials: {
         email: { label: "Email", type: "email" },
@@ -13,21 +13,24 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
-          throw new Error("Invalid credentials");
+          return null;
         }
 
         const user = await prisma.user.findUnique({
-          where: { email: credentials.email }
+          where: { email: credentials.email as string }
         });
 
         if (!user || !user.password) {
-          throw new Error("Invalid credentials");
+          return null;
         }
 
-        const isValid = await compare(credentials.password, user.password);
+        const isValid = await compare(
+          credentials.password as string,
+          user.password
+        );
 
         if (!isValid) {
-          throw new Error("Invalid credentials");
+          return null;
         }
 
         return {
@@ -61,4 +64,5 @@ export const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt"
   }
-};
+});
+
