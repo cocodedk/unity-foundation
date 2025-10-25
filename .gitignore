@@ -24,3 +24,6 @@ pnpm-debug.log*
 prisma/dev.db*
 prisma/migrations/
 
+
+# Local Netlify folder
+.netlify
