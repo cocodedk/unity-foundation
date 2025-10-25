@@ -26,16 +26,9 @@ export async function UpdatesPreview({ locale }: { locale: string }) {
   }
 
   try {
-    const posts = await prisma.post.findMany({
-      where: { status: "PUBLISHED" },
-      include: {
-        i18n: {
-          where: { locale }
-        }
-      },
-      orderBy: { publishedAt: "desc" },
-      take: 3
-    }).catch(() => []);
+    // TODO: Re-enable after Netlify Prisma issue resolved
+    // Temporarily return empty array due to Prisma binary issues
+    const posts: never[] = [];
 
     if (posts.length === 0) {
       return (
