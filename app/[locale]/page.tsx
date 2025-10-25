@@ -23,7 +23,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <>
-      <section className="bg-seedwhite">
+      <section className="bg-seedwhite -mt-16 pt-16 md:mt-0 md:pt-0">
         <Hero />
       </section>
       <HomeTeasers />
