@@ -9,7 +9,6 @@ const withNextIntl = createNextIntlPlugin(
 const nextConfig = {
   reactStrictMode: true,
   typedRoutes: false,
-  outputFileTracingRoot: '/home/bba/0-projects/unity-foundation',
   images: {
     remotePatterns: [
       {protocol: 'https', hostname: 'res.cloudinary.com'},
