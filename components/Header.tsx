@@ -10,35 +10,28 @@ export async function Header() {
   // Get current month in English (always Latin characters)
   const currentMonth = MONTH_NAMES[new Date().getMonth()];
 
-  // Fetch MobilePay number from database
-  let mobilePayNumber: string | undefined;
+  // TODO: Re-enable database fetch after Netlify Prisma issue is resolved
+  // Temporarily using hardcoded value for deployment
+  const mobilePayNumber = "12345678"; // TEMPORARY: Replace with DB fetch
 
-  // Guard against missing DATABASE_URL during build
-  if (process.env.DATABASE_URL) {
-    try {
-      const announcement = await prisma.announcement.findUnique({
-        where: { id: 1 }
-      }).catch(() => null);
-
-      if (announcement && announcement.enabled) {
-        mobilePayNumber = announcement.mobilePay;
-      }
-
-      // Debug log
-      console.log('Header - Announcement loaded:', {
-        exists: !!announcement,
-        enabled: announcement?.enabled,
-        mobilePayNumber: announcement?.mobilePay
-      });
-    } catch (error) {
-      console.error("Failed to load MobilePay number in header:", error);
-    }
-  } else {
-    console.log('Header - No DATABASE_URL configured');
-  }
+  // Disabled due to Netlify deployment issues with Prisma binaries
+  // // Guard against missing DATABASE_URL during build
+  // if (process.env.DATABASE_URL) {
+  //   try {
+  //     const announcement = await prisma.announcement.findUnique({
+  //       where: { id: 1 }
+  //     }).catch(() => null);
+  //
+  //     if (announcement && announcement.enabled) {
+  //       mobilePayNumber = announcement.mobilePay;
+  //     }
+  //   } catch (error) {
+  //     console.error("Failed to load MobilePay number in header:", error);
+  //   }
+  // }
 
   return (
-    <HeaderClient
+    <HeaderClient 
       mobilePayNumber={mobilePayNumber}
       currentMonth={currentMonth}
     />
