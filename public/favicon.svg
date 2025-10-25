@@ -5,38 +5,38 @@
   <!-- Center seed head -->
   <circle cx="32" cy="32" r="6" fill="#2D5038"/>
 
-  <!-- Seed parachutes - larger and simpler -->
-  <g stroke="#2D5038" stroke-width="2.5" fill="none">
-    <!-- Top -->
-    <line x1="32" y1="32" x2="32" y2="8" stroke-linecap="round"/>
-    <circle cx="32" cy="8" r="2.5" fill="#2D5038"/>
+  <!-- Seed parachutes - each with unique color -->
+  <g stroke-width="4.5" fill="none">
+    <!-- Top - Green -->
+    <line x1="32" y1="32" x2="32" y2="8" stroke="#4A7C59" stroke-linecap="round"/>
+    <circle cx="32" cy="8" r="2.5" fill="#4A7C59"/>
 
-    <!-- Top-right -->
-    <line x1="32" y1="32" x2="49" y2="15" stroke-linecap="round"/>
-    <circle cx="49" cy="15" r="2.5" fill="#2D5038"/>
+    <!-- Top-right - Teal -->
+    <line x1="32" y1="32" x2="49" y2="15" stroke="#5A9B8E" stroke-linecap="round"/>
+    <circle cx="49" cy="15" r="2.5" fill="#5A9B8E"/>
 
-    <!-- Right -->
-    <line x1="32" y1="32" x2="56" y2="32" stroke-linecap="round"/>
-    <circle cx="56" cy="32" r="2.5" fill="#2D5038"/>
+    <!-- Right - Blue -->
+    <line x1="32" y1="32" x2="56" y2="32" stroke="#6BA5C7" stroke-linecap="round"/>
+    <circle cx="56" cy="32" r="2.5" fill="#6BA5C7"/>
 
-    <!-- Bottom-right -->
-    <line x1="32" y1="32" x2="49" y2="49" stroke-linecap="round"/>
-    <circle cx="49" cy="49" r="2.5" fill="#2D5038"/>
+    <!-- Bottom-right - Purple -->
+    <line x1="32" y1="32" x2="49" y2="49" stroke="#8B7BA8" stroke-linecap="round"/>
+    <circle cx="49" cy="49" r="2.5" fill="#8B7BA8"/>
 
-    <!-- Bottom -->
-    <line x1="32" y1="32" x2="32" y2="56" stroke-linecap="round"/>
-    <circle cx="32" cy="56" r="2.5" fill="#2D5038"/>
+    <!-- Bottom - Coral -->
+    <line x1="32" y1="32" x2="32" y2="56" stroke="#D4846D" stroke-linecap="round"/>
+    <circle cx="32" cy="56" r="2.5" fill="#D4846D"/>
 
-    <!-- Bottom-left -->
-    <line x1="32" y1="32" x2="15" y2="49" stroke-linecap="round"/>
-    <circle cx="15" cy="49" r="2.5" fill="#2D5038"/>
+    <!-- Bottom-left - Orange -->
+    <line x1="32" y1="32" x2="15" y2="49" stroke="#E5A857" stroke-linecap="round"/>
+    <circle cx="15" cy="49" r="2.5" fill="#E5A857"/>
 
-    <!-- Left -->
-    <line x1="32" y1="32" x2="8" y2="32" stroke-linecap="round"/>
-    <circle cx="8" cy="32" r="2.5" fill="#2D5038"/>
+    <!-- Left - Yellow-green -->
+    <line x1="32" y1="32" x2="8" y2="32" stroke="#C4B541" stroke-linecap="round"/>
+    <circle cx="8" cy="32" r="2.5" fill="#C4B541"/>
 
-    <!-- Top-left -->
-    <line x1="32" y1="32" x2="15" y2="15" stroke-linecap="round"/>
-    <circle cx="15" cy="15" r="2.5" fill="#2D5038"/>
+    <!-- Top-left - Olive green -->
+    <line x1="32" y1="32" x2="15" y2="15" stroke="#7A9B57" stroke-linecap="round"/>
+    <circle cx="15" cy="15" r="2.5" fill="#7A9B57"/>
   </g>
 </svg>
