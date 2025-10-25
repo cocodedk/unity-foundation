@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Menu, X } from "lucide-react";
 import { LangSwitcher } from "./LangSwitcher";
@@ -28,26 +29,36 @@ export function HeaderClient({ mobilePayNumber, currentMonth }: HeaderClientProp
     <header className="sticky top-0 z-50 bg-seedwhite/95 backdrop-blur-sm border-b border-fluff">
       <div className="px-4 md:px-6 py-4">
         <div className="relative flex items-center justify-between gap-4">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-            <span className="text-xl md:text-2xl font-bold text-growth">
-              {t("siteName")}
-            </span>
-          </Link>
-
-          {/* MobilePay Box - Desktop (Centered) */}
-          <Link
-            href="/donate"
-            className="hidden md:flex items-center gap-2 lg:gap-3 px-3 lg:px-4 py-2 bg-coral/10 hover:bg-coral/20 rounded-lg transition-colors border border-coral/30 flex-shrink-0 absolute left-1/2 -translate-x-1/2"
-          >
-            <div className="flex items-center gap-1.5 lg:gap-2">
-              <span className="text-xs lg:text-sm text-wind whitespace-nowrap">{t("header.donateLabel")}:</span>
-              <span className="font-bold text-sm lg:text-base bg-coral text-seedwhite px-2 lg:px-3 py-1 rounded-md whitespace-nowrap">
-                {mobilePayNumber || "12345678"}
+          {/* Logo and MobilePay Box */}
+          <div className="flex items-center gap-4 lg:gap-6 flex-shrink-0">
+            {/* Logo */}
+            <Link href="/" className="flex items-center gap-2 flex-shrink-0">
+              <Image
+                src="/favicon.svg"
+                alt="Unity Foundation Logo"
+                width={32}
+                height={32}
+                className="w-7 h-7 md:w-8 md:h-8"
+              />
+              <span className="text-xl md:text-2xl font-bold text-growth">
+                {t("siteName")}
               </span>
-              <span className="text-xs lg:text-sm text-wind/70 whitespace-nowrap">| {currentMonth}</span>
-            </div>
-          </Link>
+            </Link>
+
+            {/* MobilePay Box - Desktop */}
+            <Link
+              href="/donate"
+              className="hidden md:flex items-center gap-2 lg:gap-3 px-3 lg:px-4 py-2 bg-coral/10 hover:bg-coral/20 rounded-lg transition-colors border border-coral/30 flex-shrink-0"
+            >
+              <div className="flex items-center gap-1.5 lg:gap-2">
+                <span className="text-xs lg:text-sm text-wind whitespace-nowrap">{t("header.donateLabel")}:</span>
+                <span className="font-bold text-sm lg:text-base bg-coral text-seedwhite px-2 lg:px-3 py-1 rounded-md whitespace-nowrap">
+                  {mobilePayNumber || "12345678"}
+                </span>
+                <span className="text-xs lg:text-sm text-wind/70 whitespace-nowrap">| {currentMonth}</span>
+              </div>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6 lg:gap-8">
