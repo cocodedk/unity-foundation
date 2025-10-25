@@ -33,15 +33,15 @@ export default async function UpdatePage({
   const content = post.i18n[0];
 
   return (
-    <article className="py-16 md:py-24 bg-background-light">
+    <article className="py-16 md:py-24 bg-seedwhite">
       <Container>
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <header className="mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-growth mb-6">
               {content.title}
             </h1>
-            <div className="text-text-primary/60">
+            <div className="text-wind/60">
               {formatDate(post.publishedAt!, locale)}
             </div>
           </header>
@@ -60,7 +60,7 @@ export default async function UpdatePage({
 
           {/* Content */}
           <div className="prose prose-lg max-w-none mb-12">
-            <div className="whitespace-pre-wrap text-text-primary leading-relaxed">
+            <div className="whitespace-pre-wrap text-wind leading-relaxed">
               {content.body}
             </div>
           </div>

@@ -8,16 +8,16 @@ export default async function GetInvolvedPage({ params }: { params: Promise<{ lo
   const t = await getTranslations();
 
   return (
-    <section className="py-16 md:py-24 bg-background-light">
+    <section className="py-16 md:py-24 bg-seedwhite">
       <Container>
-        <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-8 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold text-growth mb-8 text-center">
           {t("getInvolved.title")}
         </h1>
 
         <div className="max-w-2xl mx-auto">
           <Card>
             <CardContent className="p-8 text-center">
-              <p className="text-lg text-text-primary">
+              <p className="text-lg text-wind">
                 {t("getInvolved.intro")}
               </p>
             </CardContent>

@@ -8,16 +8,16 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
   const t = await getTranslations();
 
   return (
-    <section className="py-16 md:py-24 bg-background-light">
+    <section className="py-16 md:py-24 bg-seedwhite">
       <Container>
-        <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-8 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold text-growth mb-8 text-center">
           {t("legal.impressum")}
         </h1>
 
         <div className="max-w-3xl mx-auto">
           <Card>
             <CardContent className="p-8">
-              <p className="text-text-primary">{t("legal.comingSoon")}</p>
+              <p className="text-wind">{t("legal.comingSoon")}</p>
             </CardContent>
           </Card>
         </div>

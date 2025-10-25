@@ -5,7 +5,7 @@ import { Container } from "./ui/Container";
 export async function Footer() {
   const t = await getTranslations();
 
-  const links = [
+  const quickLinks = [
     { href: "/about", label: t("nav.about") },
     { href: "/programs", label: t("nav.programs") },
     { href: "/updates", label: t("nav.updates") },
@@ -13,38 +13,32 @@ export async function Footer() {
     { href: "/contact", label: t("nav.contact") }
   ];
 
-  const legalLinks = [
-    { href: "/legal/privacy", label: t("legal.privacy") },
-    { href: "/legal/cookies", label: t("legal.cookies") },
-    { href: "/legal/impressum", label: t("legal.impressum") }
-  ];
-
   return (
-    <footer className="bg-text-primary border-t border-border mt-16">
+    <footer className="bg-growth border-t border-fluff mt-16">
       <Container>
         <div className="py-12 md:py-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Brand */}
             <div>
-              <h3 className="text-xl font-bold text-primary mb-4">
+              <h3 className="text-xl font-bold text-seedwhite mb-4">
                 {t("siteName")}
               </h3>
-              <p className="text-text-light text-sm leading-relaxed">
+              <p className="text-seedwhite/80 text-sm leading-relaxed">
                 {t("footer.blurb")}
               </p>
             </div>
 
             {/* Links */}
             <div>
-              <h4 className="font-semibold text-text-light mb-4">
+              <h4 className="font-semibold text-seedwhite mb-4">
                 {t("footer.links")}
               </h4>
               <ul className="space-y-2">
-                {links.map((link) => (
+                {quickLinks.map((link) => (
                   <li key={link.href}>
                     <Link
-                      href={link.href as any}
-                      className="text-text-light hover:text-primary transition-colors text-sm"
+                      href={link.href}
+                      className="text-seedwhite hover:text-coral transition-colors text-sm"
                     >
                       {link.label}
                     </Link>
@@ -55,14 +49,14 @@ export async function Footer() {
 
             {/* Contact */}
             <div>
-              <h4 className="font-semibold text-text-light mb-4">
+              <h4 className="font-semibold text-seedwhite mb-4">
                 {t("footer.contact")}
               </h4>
               <ul className="space-y-2 text-sm">
                 <li>
                   <a
                     href="mailto:contact@unityfoundation.org"
-                    className="text-text-light hover:text-primary transition-colors"
+                    className="text-seedwhite hover:text-coral transition-colors"
                   >
                     contact@unityfoundation.org
                   </a>
@@ -72,7 +66,7 @@ export async function Footer() {
                     href="https://t.me/unity_foundation"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-text-light hover:text-primary transition-colors"
+                    className="text-seedwhite hover:text-coral transition-colors"
                   >
                     {t("footer.telegram")}
                   </a>
@@ -82,26 +76,23 @@ export async function Footer() {
           </div>
 
           {/* Bottom Bar */}
-          <div className="mt-12 pt-8 border-t border-border">
+          <div className="mt-12 pt-8 border-t border-fluff/50">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-sm text-text-light/70">
+              <p className="text-sm text-seedwhite/70">
                 © {new Date().getFullYear()} {t("siteName")}. {t("footer.allRights")}.
               </p>
               <div className="flex gap-4">
-                {legalLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href as any}
-                    className="text-sm text-text-light hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+                <Link href="/legal/privacy" className="text-sm text-seedwhite hover:text-coral transition-colors">
+                  {t("legal.privacy")}
+                </Link>
+                <Link href="/legal/cookies" className="text-sm text-seedwhite hover:text-coral transition-colors">
+                  {t("legal.cookies")}
+                </Link>
+                <Link href="/legal/impressum" className="text-sm text-seedwhite hover:text-coral transition-colors">
+                  {t("legal.impressum")}
+                </Link>
               </div>
             </div>
-            <p className="text-xs text-text-light/50 mt-4 text-center md:text-left">
-              {t("about.adminTitle")}: {t("about.adminText")}
-            </p>
           </div>
         </div>
       </Container>
