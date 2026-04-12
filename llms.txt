@@ -1,0 +1,29 @@
+# Unity Foundation
+
+> A modern, multilingual NGO website supporting children, people with disabilities, and people experiencing poverty in Denmark.
+
+## Overview
+
+Unity Foundation is built with Next.js 14 (App Router) and provides:
+- Multilingual support: English, Danish, Persian (RTL)
+- Admin CMS for managing posts and announcements
+- MobilePay donation integration
+- Cloudinary image hosting
+- NextAuth authentication with role-based access
+
+## Key Resources
+
+- [GitHub Repository](https://github.com/cocodedk/unity-foundation)
+
+## Tech Stack
+
+- Framework: Next.js 14 (App Router), TypeScript
+- Database: PostgreSQL + Prisma ORM
+- Auth: NextAuth.js
+- Styling: Tailwind CSS
+- i18n: next-intl
+- Testing: Playwright (E2E)
+
+## Author
+
+Babak Bandpey — https://cocode.dk — https://linkedin.com/in/babakbandpey

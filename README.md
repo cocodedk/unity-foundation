@@ -2,6 +2,10 @@
 
 A modern, multilingual NGO website built with Next.js, supporting children, people with disabilities, and people experiencing poverty.
 
+## Website
+- [English](https://cocodedk.github.io/unity-foundation/)
+- [فارسی (Persian)](https://cocodedk.github.io/unity-foundation/fa/)
+
 ## Features
 
 - 🌍 **Multilingual**: Full support for English, Danish, and Persian (RTL)
@@ -137,8 +141,12 @@ This is a private project for Unity Foundation. For questions, contact the admin
 ## Credits
 
 **Founder**: Mandana Zaboli
-**Administrator**: cocode.dk / Babak Bandpey
+**Administrator**: [cocode.dk](https://cocode.dk) / Babak Bandpey
+
+## Author
+
+**Babak Bandpey** — [cocode.dk](https://cocode.dk) | [LinkedIn](https://linkedin.com/in/babakbandpey) | [GitHub](https://github.com/cocodedk)
 
 ## License
 
-All rights reserved © Unity Foundation
+Apache-2.0 | © 2026 [Cocode](https://cocode.dk) | Created by [Babak Bandpey](https://linkedin.com/in/babakbandpey)
